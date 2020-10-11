@@ -4,6 +4,7 @@ const Article = require('../models/article');
 router.get('/', async (req, res, next) => {
     try {
         const [data, error] = await Article.getAllArticlesMinusMarkdown();
+        if (data[0].createdAt) data[0].createdAt = data[0].createdAt.toLocaleDateString();
         data ? res.json(data) : next(error);
     } catch (error) {
         next(error);

@@ -9,3 +9,18 @@ body {
 .bg-lt-brown {
     background-color: #ddbea9;
 }
+
+textarea {
+    resize: both;
+    width: 100%;
+    max-width: 100%;
+}
+
+.markdown {
+    height: 300px;
+    min-height: 200px;
+}
+
+label {
+    display: block;
+}

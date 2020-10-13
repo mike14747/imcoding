@@ -23,4 +23,19 @@ router.get('/:slug', async (req, res, next) => {
     }
 });
 
+router.put('/', async (req, res, next) => {
+    try {
+        const [data, error] = await Article.updateArticleBySlug({
+            title: req.body.title,
+            description: req.body.description,
+            markdown: req.body.markdown,
+            slug: req.body.slug,
+        });
+        if (error) return next(error);
+        data && data.modifiedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'Article was not updated!' });
+    } catch (error) {
+        next(error);
+    }
+});
+
 module.exports = router;

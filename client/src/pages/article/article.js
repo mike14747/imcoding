@@ -3,8 +3,7 @@ import { useParams, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import Loading from '../../components/loading/loading';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeBlock from '../../components/codeBlock/codeBlock';
 
 const Article = () => {
     const { slug } = useParams();
@@ -26,16 +25,6 @@ const Article = () => {
 
     if (isLoaded && !article) {
         return <Redirect to="/article" />;
-    }
-
-    function CodeBlock({ language, value }) {
-        if (!language) language = 'text';
-        console.log('language:', language);
-        return (
-            <SyntaxHighlighter language={language} style={vs} customStyle={{ backgroundColor: '#eeeeee', fontSize: '1rem' }}>
-                {value}
-            </SyntaxHighlighter>
-        );
     }
 
     return (
@@ -60,7 +49,6 @@ const Article = () => {
                     </div>
 
                     <div>
-                        {/* <ReactMarkdown source={article.markdown} /> */}
                         <ReactMarkdown
                             source={article.markdown}
                             renderers={{ code: CodeBlock }}

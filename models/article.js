@@ -18,6 +18,20 @@ const Article = {
             return [null, error];
         }
     },
+    updateArticleBySlug: async (paramsObj) => {
+        try {
+            const document = {
+                title: paramsObj.title,
+                description: paramsObj.description,
+                markdown: paramsObj.markdown,
+                slug: paramsObj.slug,
+            };
+            const result = await db.collection('articles').updateOne({ slug: paramsObj.slug }, { $set: document });
+            return [result, null];
+        } catch (error) {
+            return [null, error];
+        }
+    },
 };
 
 module.exports = Article;

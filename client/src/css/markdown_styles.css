@@ -4,20 +4,24 @@ pre {
     margin: 0rem 1rem 1rem 1rem;
 }
 
-pre code {
+/* pre code {
     color: #aa2244;
-}
+} */
 
 h2,
 h3 {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     color: darkslategray;
+    background-color: oldlace;
+    padding: .5rem;
 }
 
 hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    width: 75%;
+    background-color: darkslategray;
 }
 
 li {

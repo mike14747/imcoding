@@ -18,7 +18,7 @@ function App() {
             <div className="container flex-fill bg-white border border-dark">
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/article/:articleid" component={Article} />
+                    <Route exact path="/article/:slug" component={Article} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>

@@ -3,15 +3,17 @@ import { useParams, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import Loading from '../../components/loading/loading';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Article = () => {
-    const { articleid } = useParams();
+    const { slug } = useParams();
 
     const [article, setArticle] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get('/api/articles/' + articleid)
+        axios.get('/api/articles/' + slug)
             .then(response => {
                 response.data[0] ? setArticle(response.data[0]) : setArticle(null);
             })
@@ -20,10 +22,20 @@ const Article = () => {
                 setArticle(null);
             })
             .finally(() => setIsLoaded(true));
-    }, [articleid]);
+    }, [slug]);
 
     if (isLoaded && !article) {
         return <Redirect to="/article" />;
+    }
+
+    function CodeBlock({ language, value }) {
+        if (!language) language = 'text';
+        console.log('language:', language);
+        return (
+            <SyntaxHighlighter language={language} style={vs} customStyle={{ backgroundColor: '#eeeeee', fontSize: '1rem' }}>
+                {value}
+            </SyntaxHighlighter>
+        );
     }
 
     return (
@@ -48,7 +60,11 @@ const Article = () => {
                     </div>
 
                     <div>
-                        <ReactMarkdown source={article.markdown} />
+                        {/* <ReactMarkdown source={article.markdown} /> */}
+                        <ReactMarkdown
+                            source={article.markdown}
+                            renderers={{ code: CodeBlock }}
+                        />
                     </div>
                 </Fragment>
             }

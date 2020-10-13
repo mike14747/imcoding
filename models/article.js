@@ -1,5 +1,5 @@
 const db = require('../config/connectionPool').getDb();
-const ObjectID = require('mongodb').ObjectID;
+// const ObjectID = require('mongodb').ObjectID;
 
 const Article = {
     getAllArticlesMinusMarkdown: async () => {
@@ -10,9 +10,9 @@ const Article = {
             return [null, error];
         }
     },
-    getArticleById: async (_id) => {
+    getArticleBySlug: async (slug) => {
         try {
-            const result = await db.collection('articles').find({ _id: ObjectID(_id) }).toArray();
+            const result = await db.collection('articles').find({ slug }).toArray();
             return [result, null];
         } catch (error) {
             return [null, error];

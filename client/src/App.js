@@ -16,7 +16,7 @@ function App() {
     return (
         <Router>
             <Header />
-            <div className="container flex-fill bg-white border border-dark">
+            <div className="container py-4 flex-fill bg-white border border-dark">
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/article/:slug" component={Article} />

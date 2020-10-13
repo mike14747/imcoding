@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const Article = require('../models/article');
+const slugify = require('slugify');
+const { articleSchema, articleIdSchema } = require('./validation/schema/articleSchema');
+const isArticleSlugUnique = require('./helpers/isArticleSlugUnique');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -25,14 +28,19 @@ router.get('/:slug', async (req, res, next) => {
 
 router.put('/', async (req, res, next) => {
     try {
-        const [data, error] = await Article.updateArticleBySlug({
+        const paramsObj = {
+            _id: req.body._id,
             title: req.body.title,
             description: req.body.description,
             markdown: req.body.markdown,
-            slug: req.body.slug,
-        });
+            slug: slugify(req.body.title, { lower: true, strict: true }),
+        };
+        await articleIdSchema.validateAsync({ _id: paramsObj._id });
+        await articleSchema.validateAsync(paramsObj);
+        await isArticleSlugUnique(paramsObj.slug);
+        const [data, error] = await Article.updateArticleById(paramsObj);
         if (error) return next(error);
-        data && data.modifiedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'Article was not updated!' });
+        data && data.modifiedCount === 1 ? res.status(200).json({ slug: paramsObj.slug }) : res.status(400).json({ msg: 'Article was not updated!' });
     } catch (error) {
         next(error);
     }

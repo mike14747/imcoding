@@ -17,7 +17,7 @@ const Article = () => {
                 response.data[0] ? setArticle(response.data[0]) : setArticle(null);
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
                 setArticle(null);
             })
             .finally(() => setIsLoaded(true));

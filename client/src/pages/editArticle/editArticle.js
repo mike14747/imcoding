@@ -6,15 +6,17 @@ const EditArticle = () => {
     const { slug } = useParams();
 
     const [article, setArticle] = useState({
+        _id: '',
         title: '',
         description: '',
         markdown: '',
-        createdAt: '',
         slug: '',
     });
 
     const [isUpdated, setIsUpdated] = useState(false);
     const [doesArticleExist, setDoesArticleExist] = useState(true);
+    const [error, setError] = useState(null);
+    const [newSlug, setNewSlug] = useState(null);
 
     useEffect(() => {
         axios.get('/api/articles/' + slug)
@@ -35,19 +37,25 @@ const EditArticle = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.put('/api/articles', {
+            _id: article._id,
             title: article.title,
             description: article.description,
             markdown: article.markdown,
             slug: article.slug,
         })
-            .then(() => {
+            .then((response) => {
+                setError(null);
+                setNewSlug(response.data.slug);
                 setIsUpdated(true);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                // setError(error.error);
+            });
     };
 
-    if (isUpdated) {
-        return <Redirect to={'/article/' + slug} />;
+    if (isUpdated && newSlug) {
+        return <Redirect to={'/article/' + newSlug} />;
     }
 
     if (!doesArticleExist) {
@@ -57,6 +65,9 @@ const EditArticle = () => {
     return (
         <Fragment>
             <h2>Edit an article</h2>
+            {error &&
+                <h4 className="text-danger">{error}</h4>
+            }
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="title">Title</label>

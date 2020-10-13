@@ -13,7 +13,13 @@ router.use((req, res, next) => {
 });
 
 router.use((error, req, res, next) => {
-    res.status(error.status || 500).send('An error occurred!\n' + error.message);
+    if (error.isJoi) {
+        return res.status(400).json({ error: error.details[0].message });
+    } else if (error instanceof RangeError) {
+        return res.status(400).json({ error: error.message });
+    }
+    res.status(error.status || 500);
+    error.status === 404 ? res.send(error.message) : res.send('Request failed... please check your request and try again!\n' + error.message);
 });
 
 module.exports = router;

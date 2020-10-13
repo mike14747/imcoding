@@ -1,5 +1,5 @@
 const db = require('../config/connectionPool').getDb();
-// const ObjectID = require('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
 const Article = {
     getAllArticlesMinusMarkdown: async () => {
@@ -18,7 +18,20 @@ const Article = {
             return [null, error];
         }
     },
-    updateArticleBySlug: async (paramsObj) => {
+    getArticleSlugBySlug: async (slug, _id) => {
+        try {
+            let result;
+            if (_id) {
+                result = await db.collection('articles').find({ slug, _id: { $ne: ObjectID(_id) } }).toArray();
+            } else {
+                result = await db.collection('articles').find({ slug }).toArray();
+            }
+            return [result, null];
+        } catch (error) {
+            return [null, error];
+        }
+    },
+    updateArticleById: async (paramsObj) => {
         try {
             const document = {
                 title: paramsObj.title,
@@ -26,7 +39,7 @@ const Article = {
                 markdown: paramsObj.markdown,
                 slug: paramsObj.slug,
             };
-            const result = await db.collection('articles').updateOne({ slug: paramsObj.slug }, { $set: document });
+            const result = await db.collection('articles').updateOne({ _id: ObjectID(paramsObj._id) }, { $set: document });
             return [result, null];
         } catch (error) {
             return [null, error];

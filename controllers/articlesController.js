@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Article = require('../models/article');
 const slugify = require('slugify');
 const { articleSchema, articleIdSchema } = require('./validation/schema/articleSchema');
-const isArticleSlugUnique = require('./helpers/isArticleSlugUnique');
+const isArticleSlugUnique = require('./validation/helpers/isArticleSlugUnique');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -24,6 +24,24 @@ router.get('/:slug', async (req, res, next) => {
     }
 });
 
+router.post('/', async (req, res, next) => {
+    try {
+        const paramsObj = {
+            title: req.body.title,
+            description: req.body.description,
+            markdown: req.body.markdown,
+            slug: slugify(req.body.title, { lower: true, strict: true }),
+        };
+        await articleSchema.validateAsync(paramsObj);
+        await isArticleSlugUnique(paramsObj.slug, req.body._id);
+        const [data, error] = await Article.addNewArticle(paramsObj);
+        if (error) return next(error);
+        data && data.insertedId ? res.status(201).json({ slug: paramsObj.slug }) : res.status(400).json({ msg: 'New article was not added!' });
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.put('/', async (req, res, next) => {
     try {
         const paramsObj = {
@@ -38,7 +56,18 @@ router.put('/', async (req, res, next) => {
         paramsObj._id = req.body._id;
         const [data, error] = await Article.updateArticleById(paramsObj);
         if (error) return next(error);
-        data && data.modifiedCount === 1 ? res.status(200).json({ slug: paramsObj.slug }) : res.status(400).send('Article was not updated... likely because nothing changed!');
+        data && data.modifiedCount === 1 ? res.status(200).json({ slug: paramsObj.slug }) : res.status(400).send('Article was not updated!');
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.delete('/:articleid', async (req, res, next) => {
+    try {
+        await articleIdSchema.validateAsync({ _id: req.params.articleid });
+        const [data, error] = await Article.deleteArticleById(req.params.articleid);
+        if (error) return next(error);
+        data && data.deletedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'Article was not deleted!' });
     } catch (error) {
         next(error);
     }

@@ -1,4 +1,4 @@
-const Article = require('../../models/article');
+const Article = require('../../../models/article');
 
 const isArticleSlugUnique = async (slug, _id = null) => {
     const [data, error] = await Article.getArticleSlugBySlug(slug, _id);

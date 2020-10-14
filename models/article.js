@@ -31,6 +31,21 @@ const Article = {
             return [null, error];
         }
     },
+    addNewArticle: async (paramsObj) => {
+        try {
+            const document = {
+                title: paramsObj.title,
+                description: paramsObj.description,
+                markdown: paramsObj.markdown,
+                slug: paramsObj.slug,
+                createdAt: new Date(),
+            };
+            const result = await db.collection('articles').insertOne(document);
+            return [result, null];
+        } catch (error) {
+            return [null, error];
+        }
+    },
     updateArticleById: async (paramsObj) => {
         try {
             const document = {
@@ -38,8 +53,17 @@ const Article = {
                 description: paramsObj.description,
                 markdown: paramsObj.markdown,
                 slug: paramsObj.slug,
+                updatedAt: new Date(),
             };
             const result = await db.collection('articles').updateOne({ _id: ObjectID(paramsObj._id) }, { $set: document });
+            return [result, null];
+        } catch (error) {
+            return [null, error];
+        }
+    },
+    deleteArticleById: async (_id) => {
+        try {
+            const result = await db.collection('articles').deleteOne({ _id: ObjectID(_id) });
             return [result, null];
         } catch (error) {
             return [null, error];

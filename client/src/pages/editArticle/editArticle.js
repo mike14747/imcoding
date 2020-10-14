@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Redirect, useParams } from 'react-router-dom';
+import Loading from '../../components/loading/loading';
 
 const EditArticle = () => {
     const { slug } = useParams();
@@ -13,9 +14,10 @@ const EditArticle = () => {
         slug: '',
     });
 
+    const [isLoaded, setIsLoaded] = useState(false);
     const [isUpdated, setIsUpdated] = useState(false);
     const [doesArticleExist, setDoesArticleExist] = useState(true);
-    const [error, setError] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null);
     const [newSlug, setNewSlug] = useState(null);
 
     useEffect(() => {
@@ -23,7 +25,8 @@ const EditArticle = () => {
             .then(response => {
                 response.data[0] ? setArticle(response.data[0]) : setDoesArticleExist(false);
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error))
+            .finally(() => setIsLoaded(true));
     }, [slug]);
 
     const handleChange = e => {
@@ -44,13 +47,12 @@ const EditArticle = () => {
             slug: article.slug,
         })
             .then((response) => {
-                setError(null);
+                setErrorMsg(null);
                 setNewSlug(response.data.slug);
                 setIsUpdated(true);
             })
             .catch(error => {
-                console.log(error);
-                // setError(error.error);
+                setErrorMsg(error.response.data);
             });
     };
 
@@ -58,33 +60,38 @@ const EditArticle = () => {
         return <Redirect to={'/article/' + newSlug} />;
     }
 
-    if (!doesArticleExist) {
-        return <Redirect to="/no-match" />;
+    if (isLoaded && !doesArticleExist) {
+        return <Redirect to="/edit" />;
     }
 
     return (
         <Fragment>
             <h2>Edit an article</h2>
-            {error &&
-                <h4 className="text-danger">{error}</h4>
+            {!isLoaded
+                ? <Loading />
+                : <Fragment>
+                    {errorMsg &&
+                        <h4 className="text-danger">{errorMsg}</h4>
+                    }
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-4">
+                            <label htmlFor="title">Title</label>
+                            <input className="w-100 mw-100" type="text" name="title" id="title" value={article.title} onChange={handleChange}></input>
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="description">Description</label>
+                            <textarea name="description" id="description" value={article.description} onChange={handleChange}></textarea>
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="markdown">Markdown</label>
+                            <textarea className="markdown" name="markdown" id="markdown" value={article.markdown} onChange={handleChange}></textarea>
+                        </div>
+                        <div className="mb-4">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </Fragment>
             }
-            <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                    <label htmlFor="title">Title</label>
-                    <input className="w-100 mw-100" type="text" name="title" id="title" value={article.title} onChange={handleChange}></input>
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="description">Description</label>
-                    <textarea name="description" id="description" defaultValue={article.description} onChange={handleChange}></textarea>
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="markdown">Markdown</label>
-                    <textarea className="markdown" name="markdown" id="markdown" defaultValue={article.markdown} onChange={handleChange}></textarea>
-                </div>
-                <div className="mb-4">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
         </Fragment>
     );
 };

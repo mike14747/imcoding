@@ -28,7 +28,7 @@ const Article = () => {
     }
 
     return (
-        <div>
+        <Fragment>
             {!isLoaded
                 ? <Loading />
                 : <Fragment>
@@ -56,7 +56,7 @@ const Article = () => {
                     </div>
                 </Fragment>
             }
-        </div>
+        </Fragment>
     );
 };
 

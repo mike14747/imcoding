@@ -20,7 +20,7 @@ const User = {
     },
     getUserByIdForPassport: async (_id) => {
         try {
-            const result = await db.collection('users').find({ _id: ObjectID(_id) }).project({ email: 0, name: 0, payees: 0 }).toArray();
+            const result = await db.collection('users').find({ _id: ObjectID(_id) }).toArray();
             return [result, null];
         } catch (error) {
             return [null, error];

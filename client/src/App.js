@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
@@ -11,6 +11,7 @@ import NewArticle from './pages/newArticle/newArticle';
 import NoMatch from './pages/noMatch/noMatch';
 import Login from './pages/login/login';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
+import Loading from './components/loading/loading';
 
 import './css/my_style.css';
 import './css/styles.css';
@@ -22,41 +23,50 @@ import UserContext from './context/userContext';
 function App() {
     const [user, setUser] = useState(null);
     const [hasChanged, setHasChanged] = useState(true);
+    const [hasStatusLoaded, setHasStatusLoaded] = useState(false);
 
     useEffect(() => {
         axios.get('/api/auth/status')
             .then(response => {
-                // if the user is logged in, set the user object to state
-                // if the user is not logged in, set the user object to null
-                response.status === 200 ? setUser(response.data.user) : setUser(null);
+                setUser(response.data.user);
             })
             .catch((error) => {
                 console.log(error);
                 setUser(null);
-            });
+            })
+            .finally(() => setHasStatusLoaded(true));
     }, []);
 
+    if (!hasStatusLoaded) {
+        return (
+            <Loading />
+        );
+    }
+
     return (
-        <Router>
-            <UserContext.Provider value={[user, setUser]}>
-                <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
-                    <Header />
-                    <div className="container py-4 flex-fill bg-white border border-dark">
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/article/:slug" component={Article} />
-                            <ProtectedRoute exact path="/new" component={NewArticle} user={user} />
-                            <ProtectedRoute exact path="/edit/:slug" component={EditArticle} user={user} />
-                            <Route exact path="/login">
-                                {user ? <Redirect to="/" /> : <Login />}
-                            </Route>
-                            <Route component={NoMatch} />
-                        </Switch>
-                    </div>
-                    <Footer />
-                </ListChangedContext.Provider>
-            </UserContext.Provider>
-        </Router>
+        <Fragment>
+            <Router>
+                <UserContext.Provider value={{ user, setUser }}>
+                    <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
+                        <Header />
+                        <div className="container py-4 flex-fill bg-white border border-dark">
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/article/:slug" component={Article} />
+                                <ProtectedRoute exact path="/new" user={user} component={NewArticle} />
+                                <ProtectedRoute exact path="/edit/:slug" user={user} component={EditArticle} />
+                                <Route exact path="/login">
+                                    {user ? <Redirect to="/" /> : <Login />}
+                                </Route>
+                                <Route component={NoMatch} />
+                            </Switch>
+                        </div>
+                        <Footer />
+                    </ListChangedContext.Provider>
+                </UserContext.Provider>
+            </Router>
+        </Fragment>
+
     );
 }
 

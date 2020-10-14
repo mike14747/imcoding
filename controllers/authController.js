@@ -11,11 +11,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/status', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.status(200).json({ user: req.user });
-    } else {
-        res.status(299).json({ error: 'User is not logged in!' });
-    }
+    req.isAuthenticated() ? res.json({ user: req.user }) : res.json({ user: null });
 });
 
 router.post('/login', (req, res, next) => {
@@ -25,7 +21,7 @@ router.post('/login', (req, res, next) => {
         req.logIn(user, function (error) {
             if (error) return next(error);
         });
-        return res.status(200).json({ user: user, message: 'successful login' });
+        res.status(200).json({ user, message: 'successful login' });
     })(req, res, next);
 });
 

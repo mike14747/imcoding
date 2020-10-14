@@ -10,7 +10,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (_id, done) => {
     try {
-        const [data, error] = await User.getUserByIdForPassport({ _id: _id });
+        const [data, error] = await User.getUserByIdForPassport(_id);
         if (!data) return done(error);
         if (data.length === 1) {
             const user = { _id: data[0]._id, username: data[0].username };

@@ -5,6 +5,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/articles', require('./articlesController'));
+router.use('/auth', require('./authController'));
 
 router.use((req, res, next) => {
     const error = new Error('API route not found!');

@@ -8,9 +8,7 @@ const Header = () => {
 
     const handleClick = () => {
         axios.get('/api/auth/logout')
-            .then(response => {
-                setUser(null);
-            })
+            .then(() => setUser(null))
             .catch(error => console.log(error));
     };
 

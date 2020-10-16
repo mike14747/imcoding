@@ -53,27 +53,27 @@ const Article = () => {
                 ? <Loading />
                 : <Fragment>
                     <div className="border-bottom mb-4">
-                        <h1 className="mt-3 mb-1">
+                        <h1 className="mb-1 text-uppercase">
                             {article.title}
                         </h1>
-                        <div className="small mb-2">
-                            Created on: {article.createdAt}
-                        </div>
-                        <div className="row mb-2">
-                            <div className="col-6">
-                                <h5>
-                                    {article.description}
-                                </h5>
-                            </div>
-                            {user &&
-                                <div className="col-6 text-right">
-                                    <Link to={'/edit/' + slug} className="mr-4"><button>Edit this article</button></Link>
-                                    <button onClick={onDelete}>Delete this article</button>
-                                </div>
-                            }
-                        </div>
                     </div>
-
+                    <div className="small mb-2">
+                        <span>Created: {article.createdAt}</span>
+                        {article.updatedAt && article.updatedAt > article.createdAt &&
+                            <span className="ml-4 font-italic">Updated: {article.updatedAt}</span>
+                        }
+                    </div>
+                    <div className="row mb-2">
+                        <div className="col-6">
+                            {article.description}
+                        </div>
+                        {user &&
+                            <div className="col-6 text-right">
+                                <Link to={'/edit/' + slug} className="mr-4"><button>Edit this article</button></Link>
+                                <button onClick={onDelete}>Delete this article</button>
+                            </div>
+                        }
+                    </div>
                     <div>
                         <ReactMarkdown
                             source={article.markdown}
@@ -82,7 +82,7 @@ const Article = () => {
                     </div>
                 </Fragment>
             }
-        </Fragment>
+        </Fragment >
     );
 };
 

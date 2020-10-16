@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/userContext';
 import axios from 'axios';
-import Dropdown from '../dropdown/dropdown';
+import Dropdown from './subcomponents/dropdown/dropdown';
 
 const Header = () => {
     const { user, setUser } = useContext(UserContext);
@@ -15,30 +15,30 @@ const Header = () => {
 
     return (
         <div className="container-fluid bg-lt-brown border-bottom border-dark mb-4">
-            <div className="row">
-                <div className="col-3 d-flex justify-content-start align-items-center">
+            <div className="row flex-row">
+                <div className="col-md-3 col-6 order-md-1 d-flex justify-content-start align-items-center">
                     <h1><Link to="/">IMCoding</Link></h1>
                 </div>
-                <div className="col-3 d-flex justify-content-center align-items-center">
-                    {user &&
-                        <Link to="/new">Add Article</Link>
-                    }
-                </div>
-                <div className="col-3 d-flex justify-content-center align-items-center">
-                    <Dropdown />
-                </div>
-                <div className="col-3 d-flex flex-column justify-content-center align-items-end">
+                <div className="col-md-3 col-6 order-md-4 flex-column d-flex justify-content-center align-items-end">
                     {user
                         ? <Fragment>
-                            <div className="my-2">
-                                Logged in as: {user.username}
+                            <div className="my-1">
+                                <span className="small text-secondary">user: </span>{user.username}
                             </div>
-                            <div className="my-2">
+                            <div className="my-1">
                                 <button onClick={handleClick}>Logout</button>
                             </div>
                         </Fragment>
                         : <Link to="/login">Login</Link>
                     }
+                </div>
+                <div className="col-md-3 col-6 order-md-2 d-flex justify-content-center align-items-center">
+                    {user &&
+                        <Link to="/new">Add Article</Link>
+                    }
+                </div>
+                <div className="col-md-3 col-6 order-md-3 d-flex justify-content-center align-items-center">
+                    <Dropdown />
                 </div>
             </div>
         </div>

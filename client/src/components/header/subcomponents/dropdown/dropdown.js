@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ListChangedContext from '../../context/listChangedContext';
+import ListChangedContext from '../../../../context/listChangedContext';
 import './css/dropdown.css';
 
 const Dropdown = () => {
@@ -26,7 +26,7 @@ const Dropdown = () => {
     return (
         <div className="d-flex justify-content-center align-items-center py-2">
             {articles && articles.length > 0 &&
-                <div className="navdropdown" data-toggle="dropdown">
+                <div className="navdropdown">
                     <div className="navdropbtn">Select an article <i className="down"></i></div>
                     <div className="navdropdown-content">
                         {articles.map(article => (

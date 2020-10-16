@@ -26,8 +26,8 @@ mongodbConnect()
         const passport = require('./passport/passportFunctions');
         app.use(passport.initialize());
         app.use(passport.session());
-        app.use('/api/articles', checkAuthenticated, require('./controllers/adminArticleController'));
         app.use('/api', require('./controllers'));
+        app.use('/api/articles', checkAuthenticated, require('./controllers/adminArticleController'));
     })
     .catch((error) => {
         app.get('/api/*', (req, res) => {

@@ -8,15 +8,6 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-function checkAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    } else {
-        return res.status(401).json({ message: 'User must be logged in to access these routes!' });
-        // return next();
-    }
-}
-
 const { mongodbConnect } = require('./config/connectionPool');
 app.use(require('./controllers/testController'));
 
@@ -27,8 +18,6 @@ mongodbConnect()
         app.use(passport.initialize());
         app.use(passport.session());
         app.use('/api', require('./controllers'));
-        app.use('/api/articles', checkAuthenticated, require('./controllers/adminArticleController'));
-        app.use(require('./controllers/errorHandlingController'));
     })
     .catch((error) => {
         app.get('/api/*', (req, res) => {

@@ -54,7 +54,7 @@ function App() {
             <UserContext.Provider value={{ user, setUser }}>
                 <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                     <Header />
-                    <div className="container py-4 flex-fill bg-white border border-dark">
+                    <div className="container py-4 flex-fill bg-white border border-secondary">
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/article/:slug" component={Article} />

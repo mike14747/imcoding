@@ -69,8 +69,8 @@ const Article = () => {
                         </div>
                         {user &&
                             <div className="col-6 text-right">
-                                <Link to={'/edit/' + slug} className="mr-4"><button>Edit this article</button></Link>
-                                <button onClick={onDelete}>Delete this article</button>
+                                <Link to={'/edit/' + slug}><button className="mb-2">Edit this article</button></Link>
+                                <button onClick={onDelete} className="ml-4">Delete this article</button>
                             </div>
                         }
                     </div>

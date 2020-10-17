@@ -24,3 +24,29 @@ textarea {
 label {
     display: block;
 }
+
+.header {
+    margin-bottom: 0;
+}
+
+.footer {
+    margin-top: 0;
+}
+
+.header-bottom {
+    background-color: peachpuff;
+}
+
+@media (min-width: 768px) {
+    .header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer {
+        margin-top: 1.5rem;
+    }
+
+    .header-bottom {
+        background-color: #ddbea9;
+    }
+}

@@ -50,9 +50,14 @@ const User = {
             return [null, error];
         }
     },
-    getUserByUsername: async (username) => {
+    getUserByUsername: async (username, _id) => {
         try {
-            const result = await db.collection('users').find({ username: username }).toArray();
+            let result;
+            if (_id) {
+                result = await db.collection('users').find({ username, _id: { $ne: ObjectID(_id) } }).toArray();
+            } else {
+                result = await db.collection('users').find({ username: username }).toArray();
+            }
             return [result, null];
         } catch (error) {
             return [null, error];

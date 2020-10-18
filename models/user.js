@@ -12,7 +12,19 @@ const User = {
     },
     getUserById: async (_id) => {
         try {
-            const result = await db.collection('users').find({ _id: ObjectID(_id) }).toArray();
+            const result = await db.collection('users').aggregate([
+                {
+                    $match: { _id: ObjectID(_id) },
+                },
+                {
+                    $project: {
+                        _id: {
+                            $toString: '$_id',
+                        },
+                        username: 1,
+                    },
+                },
+            ]).toArray();
             return [result, null];
         } catch (error) {
             return [null, error];
@@ -20,7 +32,19 @@ const User = {
     },
     getUserByIdForPassport: async (_id) => {
         try {
-            const result = await db.collection('users').find({ _id: ObjectID(_id) }).toArray();
+            const result = await db.collection('users').aggregate([
+                {
+                    $match: { _id: ObjectID(_id) },
+                },
+                {
+                    $project: {
+                        _id: {
+                            $toString: '$_id',
+                        },
+                        username: 1,
+                    },
+                },
+            ]).toArray();
             return [result, null];
         } catch (error) {
             return [null, error];

@@ -11,14 +11,12 @@ router.use((req, res, next) => {
 });
 
 router.use((error, req, res, next) => {
-    console.log('errorHandingController.js', error);
     if (error.isJoi) {
         return res.status(400).send(error.message);
     } else if (error instanceof RangeError) {
         return res.status(400).send(error.message);
     }
     res.status(error.status || 500);
-    console.log('the error is being sent in the "res.status(error.status || 500);" part of errorHandingController.js');
     error.status === 404 ? res.send(error.message) : res.send('Request failed... please check your request and try again!\n' + error.message);
 });
 

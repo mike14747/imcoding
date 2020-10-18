@@ -26,10 +26,7 @@ function App() {
     const [hasChanged, setHasChanged] = useState(true);
     const [hasStatusLoaded, setHasStatusLoaded] = useState(false);
 
-    console.log('App.js render, user:', user);
-
     useEffect(() => {
-        // console.log('useEffect in App.js ran');
         axios.get('/api/auth/status')
             .then(response => {
                 setUser(response.data.user);

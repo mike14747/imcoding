@@ -15,6 +15,7 @@ const Article = () => {
     const [article, setArticle] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [isDeleted, setIsDeleted] = useState(false);
+    const [deleteButtonCounter, setDeleteButtonCounter] = useState(0);
 
     useEffect(() => {
         axios.get('/api/articles/' + slug)
@@ -25,16 +26,25 @@ const Article = () => {
                 console.log(error.message);
                 setArticle(null);
             })
-            .finally(() => setIsLoaded(true));
+            .finally(() => {
+                setDeleteButtonCounter(0);
+                setIsDeleted(false);
+                setIsLoaded(true);
+            });
     }, [slug]);
 
     const onDelete = () => {
-        axios.delete('/api/articles/' + article._id)
-            .then(() => {
-                setHasChanged(true);
-                setIsDeleted(true);
-            })
-            .catch(error => console.log(error));
+        if (deleteButtonCounter === 0) {
+            setDeleteButtonCounter(1);
+        } else {
+            axios.delete('/api/articles/' + article._id)
+                .then(() => {
+                    setHasChanged(true);
+                    setIsDeleted(true);
+                    setDeleteButtonCounter(0);
+                })
+                .catch(error => console.log(error.message));
+        }
     };
 
     if (isDeleted) {
@@ -71,6 +81,9 @@ const Article = () => {
                             <div className="col-6 text-right">
                                 <Link to={'/edit/' + slug}><button className="mb-2">Edit this article</button></Link>
                                 <button onClick={onDelete} className="ml-4">Delete this article</button>
+                                {deleteButtonCounter === 1 &&
+                                    <div className="text-danger text-right">Are you sure?</div>
+                                }
                             </div>
                         }
                     </div>

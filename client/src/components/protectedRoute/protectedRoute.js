@@ -3,7 +3,6 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ProtectedRoute = ({ user, component: Component, ...rest }) => {
-    console.log('inside protected route, user:', user);
     return (
         <Route
             {...rest}

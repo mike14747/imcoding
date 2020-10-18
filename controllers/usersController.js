@@ -6,12 +6,28 @@ const checkAuthenticated = require('./utils/checkAuthenticated');
 const isUsernameUnique = require('./validation/helpers/isUsernameUnique');
 const saltRounds = 10;
 
-router.get('/:_id', checkAuthenticated, async (req, res, next) => {
-    if (req.params._id !== req.user._id) return res.status(401).send('Mismatch in user id!');
-    res.send('sending from the /api/users/' + req.params._id + ' route');
+router.get('/', checkAuthenticated, async (req, res, next) => {
+    try {
+        const [data, error] = await User.getAllUsers();
+        if (error) next(error);
+        data ? res.json(data) : next(error);
+    } catch (error) {
+        next(error);
+    }
 });
 
-router.post('/', async (req, res, next) => {
+router.get('/:_id', checkAuthenticated, async (req, res, next) => {
+    try {
+        if (req.params._id !== req.user._id) return res.status(401).send('Mismatch in user id!');
+        const [data, error] = await User.getUserById(req.params._id);
+        if (error) next(error);
+        data ? res.json(data) : next(error);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post('/', checkAuthenticated, async (req, res, next) => {
     try {
         const paramsObj = {
             username: req.body.username,
@@ -51,7 +67,6 @@ router.put('/', checkAuthenticated, async (req, res, next) => {
 
 router.delete('/:_id', checkAuthenticated, async (req, res, next) => {
     try {
-        if (req.params._id !== req.user._id) return res.status(401).send('Mismatch in user id!');
         const [data, error] = await User.deleteUserById(req.params._id);
         if (error) return next(error);
         data && data.deletedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'User was not deleted!' });

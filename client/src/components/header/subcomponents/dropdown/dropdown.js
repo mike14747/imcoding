@@ -27,7 +27,7 @@ const Dropdown = () => {
         <div className="d-flex justify-content-center align-items-center py-2">
             {articles && articles.length > 0 &&
                 <div className="navdropdown">
-                    <div className="navdropbtn">Select an article <i className="down"></i></div>
+                    <div className="navdropbtn">Articles <i className="down"></i></div>
                     <div className="navdropdown-content">
                         {articles.map(article => (
                             <div className="item" key={article._id}>

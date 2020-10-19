@@ -9,7 +9,7 @@ const Header = () => {
         <div className="container-fluid bg-lt-brown header">
             <div className="row flex-row">
                 <div className="col-md-3 col-6 order-md-1 d-flex justify-content-start align-items-center border-bottom border-secondary py-2">
-                    <h1><Link to="/" className="text-decoration-none">IMCoding</Link></h1>
+                    <Link to="/"><img src="/images/logo.png" className="img-fluid" /></Link>
                 </div>
                 <div className="col-md-3 col-6 order-md-4 flex-column d-flex justify-content-center border-bottom border-secondary py-2">
                     <Auth />

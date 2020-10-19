@@ -11,7 +11,6 @@ import NewArticle from './pages/newArticle/newArticle';
 import NoMatch from './pages/noMatch/noMatch';
 import Login from './pages/login/login';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
-// import Loading from './components/loading/loading';
 
 import './css/my_style.css';
 import './css/styles.css';
@@ -51,7 +50,7 @@ function App() {
             <UserContext.Provider value={{ user, setUser }}>
                 <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                     <Header />
-                    <div className="container py-4 flex-fill bg-white border border-secondary">
+                    <div className="container py-4 flex-fill bg-white main-container">
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/article/:slug" component={Article} />

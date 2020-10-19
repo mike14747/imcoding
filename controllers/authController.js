@@ -3,11 +3,7 @@ const passport = require('../passport/passportFunctions');
 
 router.get('/logout', (req, res) => {
     req.logOut();
-    if (req.isAuthenticated()) {
-        res.status(500).json({ message: 'Logout was unsuccessful', user: req.user });
-    } else {
-        res.status(200).json({ message: 'User has been logged out', user: null });
-    }
+    req.isAuthenticated() ? res.status(500).json({ message: 'Logout was unsuccessful', user: req.user }) : res.status(200).json({ message: 'User has been logged out', user: null });
 });
 
 router.get('/status', (req, res) => {

@@ -1,0 +1,37 @@
+.auth-divs {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: right;
+}
+
+.auth-btn {
+    color: #f5f5dc;
+    padding: 0.15rem 0.5rem;
+    border: 1px #999999 solid;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.auth-btn:hover {
+    color: #ffffff;
+    border: 1px #777777 solid;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.33);
+}
+
+.logout-btn {
+    background-color: #ee6c4d;
+    color: #f5f5dc;
+}
+
+.login-btn {
+    background-color: forestgreen;
+    color: #f5f5dc;
+}

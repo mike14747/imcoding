@@ -17,8 +17,8 @@ describe('Test /api routes', function () {
     };
 
     const loginUser = () => {
-        describe('Check the auth status of a user, login a user and test that login status', function () {
-            it('should GET the auth status of a user not being logged in', function (done) {
+        describe('Check the auth status of a user, login a user and retest the auth status of the user', function () {
+            it('should GET the auth status of a user that is NOT logged in', function (done) {
                 agent.get('/api/auth/status')
                     .then(response => {
                         response.should.have.status(200);

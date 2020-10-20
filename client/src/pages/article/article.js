@@ -23,11 +23,18 @@ const Article = () => {
     useEffect(() => {
         axios.get('/api/articles/' + slug)
             .then(response => {
-                response.data[0] ? setArticle(response.data[0]) : setArticle(null);
+                if (response.data[0]) {
+                    setArticle(response.data[0]);
+                    setCurrentSlug(slug);
+                } else {
+                    setArticle(null);
+                    setCurrentSlug(null);
+                }
             })
             .catch(error => {
                 console.log(error.message);
                 setArticle(null);
+                setCurrentSlug(null);
             })
             .finally(() => {
                 setDeleteButtonCounter(0);

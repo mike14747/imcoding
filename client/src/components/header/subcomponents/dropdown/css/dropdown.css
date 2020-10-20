@@ -70,3 +70,16 @@ i {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
+.viewing {
+    cursor: default;
+    color: #999999 !important;
+}
+
+.viewing:hover {
+    background-color: #dddddd !important;
+}
+
+.current-gt {
+    margin: 0 0.25rem 0 0.5rem;
+}

@@ -3,8 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ListChangedContext from '../../../../context/listChangedContext';
 import './css/dropdown.css';
+import PropTypes from 'prop-types';
 
-const Dropdown = () => {
+const Dropdown = ({ currentSlug, setCurrentSlug }) => {
     const { hasChanged, setHasChanged } = useContext(ListChangedContext);
 
     const [articles, setArticles] = useState(null);
@@ -31,7 +32,10 @@ const Dropdown = () => {
                     <div className="navdropdown-content">
                         {articles.map(article => (
                             <div className="item" key={article._id}>
-                                <Link to={'/article/' + article.slug}>{article.title} </ Link>
+                                {currentSlug && (article.slug === currentSlug)
+                                    ? <Link to={'/article/' + article.slug} className="viewing"><span className="current-gt">&gt;</span>{article.title}</Link>
+                                    : <Link to={'/article/' + article.slug} onClick={() => setCurrentSlug(article.slug)}>{article.title}</ Link>
+                                }
                             </div>
                         ))}
                     </div>
@@ -39,6 +43,12 @@ const Dropdown = () => {
             }
         </div>
     );
+};
+
+Dropdown.propTypes = {
+    currentSlug: PropTypes.string,
+    setCurrentSlug: PropTypes.func,
+    buttonText: PropTypes.string,
 };
 
 export default Dropdown;

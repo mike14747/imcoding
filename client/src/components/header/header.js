@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AddButton from './subcomponents/addButton/addButton';
 import Dropdown from './subcomponents/dropdown/dropdown';
 import Auth from './subcomponents/auth/auth';
 
 const Header = () => {
+    const [currentSlug, setCurrentSlug] = useState(null);
+
     return (
         <div className="container-fluid bg-lt-brown header">
             <div className="row flex-row">
                 <div className="col-md-3 col-6 order-md-1 d-flex justify-content-start align-items-center border-bottom border-secondary py-2">
-                    <Link to="/"><img src="/images/logo.png" className="img-fluid" /></Link>
+                    <Link to="/"><img src="/images/logo.png" alt="IMCoding" className="img-fluid" /></Link>
                 </div>
                 <div className="col-md-3 col-6 order-md-4 flex-column d-flex justify-content-center border-bottom border-secondary py-2">
                     <Auth />
@@ -18,7 +20,7 @@ const Header = () => {
                     <AddButton />
                 </div>
                 <div className="col-md-3 col-6 order-md-3 d-flex justify-content-center align-items-center border-bottom border-secondary py-2 header-bottom">
-                    <Dropdown />
+                    <Dropdown currentSlug={currentSlug} setCurrentSlug={setCurrentSlug} />
                 </div>
             </div>
         </div>

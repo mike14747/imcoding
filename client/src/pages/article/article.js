@@ -41,7 +41,7 @@ const Article = () => {
                 setIsDeleted(false);
                 setIsLoaded(true);
             });
-    }, [slug]);
+    }, [slug, setCurrentSlug]);
 
     const onDelete = () => {
         if (deleteButtonCounter === 0) {

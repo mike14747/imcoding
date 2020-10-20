@@ -1,12 +1,19 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import UserContext from '../../context/userContext';
+import CurrentSlugContext from '../../context/currentSlugContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState(null);
     const { setUser } = useContext(UserContext);
+
+    const { setCurrentSlug } = useContext(CurrentSlugContext);
+
+    useEffect(() => {
+        setCurrentSlug(null);
+    }, [setCurrentSlug]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -6,6 +6,7 @@ import Loading from '../../components/loading/loading';
 import CodeBlock from '../../components/codeBlock/codeBlock';
 import UserContext from '../../context/userContext';
 import ListChangedContext from '../../context/listChangedContext';
+import CurrentSlugContext from '../../context/currentSlugContext';
 
 const Article = () => {
     const { slug } = useParams();
@@ -16,6 +17,8 @@ const Article = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isDeleted, setIsDeleted] = useState(false);
     const [deleteButtonCounter, setDeleteButtonCounter] = useState(0);
+
+    const { setCurrentSlug } = useContext(CurrentSlugContext);
 
     useEffect(() => {
         axios.get('/api/articles/' + slug)
@@ -42,6 +45,7 @@ const Article = () => {
                     setHasChanged(true);
                     setIsDeleted(true);
                     setDeleteButtonCounter(0);
+                    setCurrentSlug(null);
                 })
                 .catch(error => console.log(error.message));
         }

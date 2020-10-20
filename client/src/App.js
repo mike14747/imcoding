@@ -18,12 +18,14 @@ import './css/markdown_styles.css';
 
 import ListChangedContext from './context/listChangedContext';
 import UserContext from './context/userContext';
+import CurrentSlugContext from './context/currentSlugContext';
 import Loading from './components/loading/loading';
 
 function App() {
     const [user, setUser] = useState(null);
     const [hasChanged, setHasChanged] = useState(true);
     const [hasStatusLoaded, setHasStatusLoaded] = useState(false);
+    const [currentSlug, setCurrentSlug] = useState(null);
 
     useEffect(() => {
         axios.get('/api/auth/status')
@@ -48,22 +50,24 @@ function App() {
     return (
         <Router>
             <UserContext.Provider value={{ user, setUser }}>
-                <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
-                    <Header />
-                    <div className="container py-4 flex-fill bg-white main-container">
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/article/:slug" component={Article} />
-                            <ProtectedRoute exact path="/new" user={user} component={NewArticle} />
-                            <ProtectedRoute exact path="/edit/:slug" user={user} component={EditArticle} />
-                            <Route exact path="/login">
-                                {user ? <Redirect to="/" /> : <Login />}
-                            </Route>
-                            <Route component={NoMatch} />
-                        </Switch>
-                    </div>
-                    <Footer />
-                </ListChangedContext.Provider>
+                <CurrentSlugContext.Provider value={{ currentSlug, setCurrentSlug }}>
+                    <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
+                        <Header />
+                        <div className="container py-4 flex-fill bg-white main-container">
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/article/:slug" component={Article} />
+                                <ProtectedRoute exact path="/new" user={user} component={NewArticle} />
+                                <ProtectedRoute exact path="/edit/:slug" user={user} component={EditArticle} />
+                                <Route exact path="/login">
+                                    {user ? <Redirect to="/" /> : <Login />}
+                                </Route>
+                                <Route component={NoMatch} />
+                            </Switch>
+                        </div>
+                        <Footer />
+                    </ListChangedContext.Provider>
+                </CurrentSlugContext.Provider>
             </UserContext.Provider>
         </Router>
 

@@ -2,11 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ListChangedContext from '../../../../context/listChangedContext';
+import CurrentSlugContext from '../../../../context/currentSlugContext';
 import './css/dropdown.css';
-import PropTypes from 'prop-types';
 
-const Dropdown = ({ currentSlug, setCurrentSlug }) => {
+const Dropdown = () => {
     const { hasChanged, setHasChanged } = useContext(ListChangedContext);
+    const { currentSlug, setCurrentSlug } = useContext(CurrentSlugContext);
 
     const [articles, setArticles] = useState(null);
 
@@ -43,12 +44,6 @@ const Dropdown = ({ currentSlug, setCurrentSlug }) => {
             }
         </div>
     );
-};
-
-Dropdown.propTypes = {
-    currentSlug: PropTypes.string,
-    setCurrentSlug: PropTypes.func,
-    buttonText: PropTypes.string,
 };
 
 export default Dropdown;

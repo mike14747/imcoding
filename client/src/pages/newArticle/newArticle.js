@@ -1,7 +1,8 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, { useState, useContext, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import ListChangedContext from '../../context/listChangedContext';
+import CurrentSlugContext from '../../context/currentSlugContext';
 
 const NewArticle = () => {
     const { setHasChanged } = useContext(ListChangedContext);
@@ -11,6 +12,12 @@ const NewArticle = () => {
         description: '',
         markdown: '',
     });
+
+    const { setCurrentSlug } = useContext(CurrentSlugContext);
+
+    useEffect(() => {
+        setCurrentSlug(null);
+    }, [setCurrentSlug]);
 
     const [newSlug, setNewSlug] = useState(null);
 

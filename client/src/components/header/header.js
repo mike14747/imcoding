@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import AddButton from './subcomponents/addButton/addButton';
 import Dropdown from './subcomponents/dropdown/dropdown';
 import Auth from './subcomponents/auth/auth';
 
 const Header = () => {
-    const [currentSlug, setCurrentSlug] = useState(null);
-
     return (
         <div className="container-fluid bg-lt-brown header">
             <div className="row flex-row">
@@ -20,7 +18,7 @@ const Header = () => {
                     <AddButton />
                 </div>
                 <div className="col-md-3 col-6 order-md-3 d-flex justify-content-center align-items-center border-bottom border-secondary py-2 header-bottom">
-                    <Dropdown currentSlug={currentSlug} setCurrentSlug={setCurrentSlug} />
+                    <Dropdown />
                 </div>
             </div>
         </div>

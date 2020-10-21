@@ -236,6 +236,7 @@ describe('Articles API as a logged in user (/api/articles)', function () {
 
     // should FAIL to DELETE the newly created article because the _id param is invalid
 
+    // log out the user to retest secure routes
     it('should logout the user that was logged in during tests, so the secure routes can be checked for security', function (done) {
         agent
             .get('/api/auth/logout')

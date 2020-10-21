@@ -1,4 +1,4 @@
-const { agent } = require('../utils/serverInit');
+const agent = require('../utils/serverInit');
 
 describe('Test cleanup', function () {
     it('should logout the user that was logged in during tests and close the agent', function (done) {

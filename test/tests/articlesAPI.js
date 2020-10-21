@@ -1,4 +1,4 @@
-const { agent } = require('../utils/serverInit');
+const agent = require('../utils/serverInit');
 
 describe('Articles API as a logged in user (/api/articles)', function () {
     let slug = '';

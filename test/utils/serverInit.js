@@ -4,7 +4,4 @@ const chaiHttp = require('chai-http');
 chai.should();
 chai.use(chaiHttp);
 
-module.exports = {
-    agent: chai.request.agent(app),
-    request: chai.request(app),
-};
+module.exports = chai.request.agent(app);

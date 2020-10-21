@@ -1,4 +1,5 @@
-const { agent, request } = require('./utils/serverInit');
+const agent = require('./utils/serverInit');
+// const loginUser = require('./utils/loginUser');
 
 describe('Test /api routes', function () {
     before(done => setTimeout(done, 500));
@@ -10,11 +11,9 @@ describe('Test /api routes', function () {
 
     const runTests = () => {
         require('./tests/articlesAPI');
-        // require('./tests/usersLoggedInAPI');
-        // require('./tests/authLoggedInAPI');
+        // require('./tests/usersAPI');
+        // require('./tests/authAPI');
         require('./tests/cleanup');
-        // require('./tests/usersLoggedOutAPI');
-        // require('./tests/authLoggedOutAPI');
     };
 
     const loginAndCheckStatus = () => {
@@ -41,6 +40,8 @@ describe('Test /api routes', function () {
                         done();
                     });
             });
+
+            // loginUser();
 
             it('should check and see if the user is logged in', function (done) {
                 agent.get('/api/auth/status')

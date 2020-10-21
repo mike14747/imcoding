@@ -1,7 +1,7 @@
 const { agent } = require('../utils/serverInit');
 
 describe('Test cleanup', function () {
-    it('should logout the user that was logged in during tests', function (done) {
+    it('should logout the user that was logged in during tests and close the agent', function (done) {
         agent
             .get('/api/auth/logout')
             .end(function (error, response) {

@@ -86,7 +86,7 @@ const Article = () => {
                     </div>
                     <div className="row mb-2">
                         <div className="col-6">
-                            {article.description}
+                            {article.description && article.description}
                         </div>
                         {user &&
                             <div className="col-6 text-right">

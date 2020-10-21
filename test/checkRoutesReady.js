@@ -1,22 +1,23 @@
 const { agent, request } = require('./utils/serverInit');
 
 describe('Test /api routes', function () {
+    before(done => setTimeout(done, 500));
+
     const userCredentials = {
         "username": process.env.TEST_USER,
         "password": process.env.TEST_PASSWORD
     };
 
     const runTests = () => {
-        // require('./tests/usersLoggedOutAPI');
+        require('./tests/articlesAPI');
         // require('./tests/usersLoggedInAPI');
-        // require('./tests/articlesLoggedOutAPI');
-        // require('./tests/articlesLoggedInAPI');
-        // require('./tests/authLoggedOutAPI');
         // require('./tests/authLoggedInAPI');
         require('./tests/cleanup');
+        // require('./tests/usersLoggedOutAPI');
+        // require('./tests/authLoggedOutAPI');
     };
 
-    const loginUser = () => {
+    const loginAndCheckStatus = () => {
         describe('Check the auth status of a user, login a user and retest the auth status of the user', function () {
             it('should GET the auth status of a user that is NOT logged in', function (done) {
                 agent.get('/api/auth/status')
@@ -60,8 +61,8 @@ describe('Test /api routes', function () {
             agent.get('/api/test')
                 .end(function (error, response) {
                     if (error) done(error);
-                    if (response.status === 200) loginUser();
                     response.should.have.status(200);
+                    if (response.status === 200) loginAndCheckStatus();
                     done();
                 });
         });
@@ -69,36 +70,3 @@ describe('Test /api routes', function () {
 
     checkRoutes();
 });
-
-// const app = require('../server');
-// const chai = require('chai');
-// const chaiHttp = require('chai-http');
-// chai.should();
-// chai.use(chaiHttp);
-// const requester = chai.request(app).keepOpen();
-
-// describe('Test user routes without being logged in', function () {
-//     const runTests = () => {
-//         require('./tests/articlesLoggedOutAPI');
-//         require('./tests/usersLoggedOutAPI');
-//     };
-
-//     const checkRoutes = () => {
-//         it('should check and see if the API routes are ready', function (done) {
-//             requester.get('/api/test')
-//                 .end(function (error, response) {
-//                     if (error) done(error);
-//                     if (response.status === 200) runTests();
-//                     response.should.have.status(200);
-//                     done();
-//                 });
-//         });
-//     };
-
-//     checkRoutes();
-
-//     after(function (done) {
-//         requester.close();
-//         done();
-//     });
-// });

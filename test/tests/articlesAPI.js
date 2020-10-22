@@ -1,9 +1,11 @@
 const agent = require('../utils/serverInit');
+const loginUser = require('./loginUser');
+const logoutUser = require('./logoutUser');
 
-describe('Articles API as a logged in user (/api/articles)', function () {
-    let slug = '';
-    let _id = '';
+let slug = '';
+let _id = '';
 
+describe('Articles (/api/articles)', function () {
     it('should POST a new article using the provided params body and return the inserted slug', function (done) {
         const paramsObj = {
             title: 'new title',
@@ -236,18 +238,12 @@ describe('Articles API as a logged in user (/api/articles)', function () {
 
     // should FAIL to DELETE the newly created article because the _id param is invalid
 
-    // log out the user to retest secure routes
-    it('should logout the user that was logged in during tests, so the secure routes can be checked for security', function (done) {
-        agent
-            .get('/api/auth/logout')
-            .end(function (error, response) {
-                if (error) done(error);
-                response.should.have.status(200);
-                response.should.be.json;
-                response.body.should.have.property('user').and.to.be.null;
-                done();
-            });
-    });
+});
+
+// log out the user to retest secure routes
+logoutUser();
+
+describe('continue Articles (/api/articles)', function () {
 
     // test all the secure routes with a non-logged in user
     it('should FAIL to POST a new article using the provided params body because the user is not logged in', function (done) {
@@ -292,25 +288,12 @@ describe('Articles API as a logged in user (/api/articles)', function () {
             })
             .catch(error => done(error));
     });
+});
 
-    // log the user back in so the newly created article can be deleted
-    const userCredentials = {
-        "username": process.env.TEST_USER,
-        "password": process.env.TEST_PASSWORD
-    };
+// log the user back in so the newly created article can be deleted
+loginUser();
 
-    it('should login a user, via POST', function (done) {
-        agent.post('/api/auth/login')
-            .send(userCredentials)
-            .end(function (error, response) {
-                if (error) done(error);
-                response.should.have.status(200);
-                response.should.be.json;
-                response.body.should.have.property('user').and.to.be.an('object');
-                done();
-            });
-    });
-
+describe('continue Articles (/api/articles)', function () {
     it('should DELETE the newly created article using the _id', function (done) {
         agent
             .delete('/api/articles/' + _id)

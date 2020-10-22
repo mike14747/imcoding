@@ -1,4 +1,4 @@
-const agent = require('./serverInit');
+const agent = require('../utils/serverInit');
 
 const loginUser = () => {
     const userCredentials = {

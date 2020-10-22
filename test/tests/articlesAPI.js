@@ -1,5 +1,5 @@
 const agent = require('../utils/serverInit');
-const loginUser = require('./loginUser');
+const { loginUser } = require('./loginUser');
 const logoutUser = require('./logoutUser');
 
 let slug = '';

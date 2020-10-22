@@ -232,11 +232,35 @@ describe('Articles (/api/articles)', function () {
             .catch(error => done(error));
     });
 
-    // should FAIL to DELETE the newly created article because the _id param was not included
+    it('should FAIL to DELETE the newly created article because the _id param was not included', function (done) {
+        agent
+            .delete('/api/articles')
+            .then(response => {
+                response.should.have.status(404);
+                done();
+            })
+            .catch(error => done(error));
+    });
 
-    // should FAIL to DELETE the newly created article because the _id param does not exist
+    it('should FAIL to DELETE the newly created article because the _id param does not exist', function (done) {
+        agent
+            .delete('/api/articles/abcdefabcdefabcdefabcdef')
+            .then(response => {
+                response.should.have.status(400);
+                done();
+            })
+            .catch(error => done(error));
+    });
 
-    // should FAIL to DELETE the newly created article because the _id param is invalid
+    it('should FAIL to DELETE the newly created article because the _id param is invalid', function (done) {
+        agent
+            .delete('/api/articles/0')
+            .then(response => {
+                response.should.have.status(400);
+                done();
+            })
+            .catch(error => done(error));
+    });
 
 });
 
@@ -262,7 +286,7 @@ describe('continue Articles (/api/articles)', function () {
             .catch(error => done(error));
     });
 
-    it('should FAIL to POST a new article using the provided params body because the user is not logged in', function (done) {
+    it('should FAIL to update, via PUT, a new article using the provided params body because the user is not logged in', function (done) {
         const paramsObj = {
             _id: _id,
             title: 'updated title',

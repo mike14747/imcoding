@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Article = require('../models/article');
 const slugify = require('slugify');
-const articleSchema = require('./validation/schema/articleSchema');
+const { articleSchema, articleIdSchema } = require('./validation/schema/articleSchema');
 const isArticleSlugUnique = require('./validation/helpers/isArticleSlugUnique');
 const checkAuthenticated = require('./utils/checkAuthenticated');
 
@@ -64,6 +64,7 @@ router.put('/', checkAuthenticated, async (req, res, next) => {
 
 router.delete('/:articleid', checkAuthenticated, async (req, res, next) => {
     try {
+        await articleIdSchema.validateAsync({ _id: req.params.articleid });
         const [data, error] = await Article.deleteArticleById(req.params.articleid);
         if (error) return next(error);
         data && data.deletedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'Article was not deleted!' });

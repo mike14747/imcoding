@@ -14,4 +14,15 @@ const articleSchema = Joi.object({
     slug: Joi.string().min(1),
 });
 
-module.exports = articleSchema;
+const articleIdSchema = Joi.object({
+    _id: Joi.string().hex().length(24).messages({
+        'string.base': idError,
+        'string.hex': idError,
+        'string.length': idError,
+    }).required(),
+});
+
+module.exports = {
+    articleSchema,
+    articleIdSchema,
+};

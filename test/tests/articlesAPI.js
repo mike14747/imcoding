@@ -5,6 +5,8 @@ const logoutUser = require('./logoutUser');
 let slug = '';
 let _id = '';
 
+loginUser();
+
 describe('Articles (/api/articles)', function () {
     it('should POST a new article using the provided params body and return the inserted slug', function (done) {
         const paramsObj = {
@@ -264,7 +266,6 @@ describe('Articles (/api/articles)', function () {
 
 });
 
-// log out the user to retest secure routes
 logoutUser();
 
 describe('Test all the secure Articles routes with a non-logged in user (/api/articles)', function () {
@@ -314,7 +315,6 @@ describe('Test all the secure Articles routes with a non-logged in user (/api/ar
     });
 });
 
-// log the user back in so the newly created article can be deleted
 loginUser();
 
 describe('continue Articles (/api/articles)', function () {

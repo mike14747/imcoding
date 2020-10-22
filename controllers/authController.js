@@ -11,6 +11,7 @@ router.get('/status', (req, res) => {
 });
 
 router.post('/login', (req, res, next) => {
+    if (req.isAuthenticated()) return res.status(400).json({ message: 'User is already logged in' });
     passport.authenticate('login', (error, user, info) => {
         if (error) return next(error);
         if (!user) return res.status(299).json(info);

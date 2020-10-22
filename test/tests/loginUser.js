@@ -6,7 +6,7 @@ const loginUser = () => {
         "password": process.env.TEST_PASSWORD
     };
 
-    describe('Login a user', function () {
+    describe('Login user', function () {
         it('should login a user, via POST', function (done) {
             agent.post('/api/auth/login')
                 .send(userCredentials)

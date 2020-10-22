@@ -1,7 +1,7 @@
 const agent = require('../utils/serverInit');
 
 const logoutUser = () => {
-    describe('User logout', function () {
+    describe('Logout user', function () {
         it('should logout the user', function (done) {
             agent
                 .get('/api/auth/logout')

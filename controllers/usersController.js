@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/user');
-const userSchema = require('./validation/schema/userSchema');
+const { userSchema, userIdSchema } = require('./validation/schema/userSchema');
 const bcryptjs = require('bcryptjs');
 const checkAuthenticated = require('./utils/checkAuthenticated');
 const isUsernameUnique = require('./validation/helpers/isUsernameUnique');
@@ -67,6 +67,7 @@ router.put('/', checkAuthenticated, async (req, res, next) => {
 
 router.delete('/:_id', checkAuthenticated, async (req, res, next) => {
     try {
+        await userIdSchema.validateAsync({ _id: req.params._id });
         const [data, error] = await User.deleteUserById(req.params._id);
         if (error) return next(error);
         data && data.deletedCount === 1 ? res.status(204).end() : res.status(400).json({ msg: 'User was not deleted!' });

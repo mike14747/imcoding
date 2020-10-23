@@ -268,9 +268,7 @@ describe('Articles (/api/articles)', function () {
 
 logoutUser();
 
-describe('Test all the secure Articles routes with a non-logged in user (/api/articles)', function () {
-
-    // test all the secure routes with a non-logged in user
+describe('Test all the secure articles route CRUD methods (/api/articles) with the user not logged in', function () {
     it('should FAIL to POST a new article using the provided params body because the user is not logged in', function (done) {
         const paramsObj = {
             title: 'new title',

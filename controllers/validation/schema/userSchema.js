@@ -22,4 +22,15 @@ const userSchema = Joi.object({
     }).required(),
 });
 
-module.exports = userSchema;
+const userIdSchema = Joi.object({
+    _id: Joi.string().hex().length(24).messages({
+        'string.base': idError,
+        'string.hex': idError,
+        'string.length': idError,
+    }).required(),
+});
+
+module.exports = {
+    userSchema,
+    userIdSchema,
+};

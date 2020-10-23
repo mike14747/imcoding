@@ -6,7 +6,7 @@ describe('Test /api routes', function () {
     const runTests = () => {
         require('./tests/authAPI');
         require('./tests/articlesAPI');
-        // require('./tests/usersAPI');
+        require('./tests/usersAPI');
         require('./tests/cleanup');
     };
 

@@ -328,3 +328,5 @@ describe('continue Articles (/api/articles)', function () {
             .catch(error => done(error));
     });
 });
+
+logoutUser();

@@ -18,7 +18,7 @@ router.get('/', checkAuthenticated, async (req, res, next) => {
 
 router.get('/:_id', checkAuthenticated, async (req, res, next) => {
     try {
-        if (req.params._id !== req.user._id) return res.status(401).send('Mismatch in user id!');
+        if (req.params._id !== req.user._id) return res.status(401).send('Mismatch in user _id!');
         const [data, error] = await User.getUserById(req.params._id);
         if (error) next(error);
         data ? res.json(data) : next(error);
@@ -47,7 +47,7 @@ router.post('/', checkAuthenticated, async (req, res, next) => {
 
 router.put('/', checkAuthenticated, async (req, res, next) => {
     try {
-        if (req.body._id !== req.user._id) return res.status(401).send('Mismatch in user id!');
+        if (req.body._id !== req.user._id) return res.status(401).send('Mismatch in user _id!');
         const paramsObj = {
             _id: req.body._id,
             username: req.body.username,

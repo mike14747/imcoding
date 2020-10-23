@@ -37,7 +37,24 @@ const duplicateLogin = () => {
     });
 };
 
+const loginSpecifiedUser = (username, password) => {
+    describe('Login user', function () {
+        it('should login a user, via POST', function (done) {
+            agent.post('/api/auth/login')
+                .send({ username, password})
+                .then(response => {
+                    response.should.have.status(200);
+                    response.should.be.json;
+                    response.body.should.have.property('user').and.to.be.an('object');
+                    done();
+                })
+                .catch(error => done(error));
+        });
+    });
+};
+
 module.exports = {
     loginUser,
     duplicateLogin,
+    loginSpecifiedUser,
 };

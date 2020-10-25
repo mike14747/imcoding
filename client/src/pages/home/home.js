@@ -15,7 +15,6 @@ const Home = () => {
     useEffect(() => {
         axios.get('/api/articles/latest/details')
             .then(response => {
-                console.log(response.data);
                 setLatestArticles(response.data);
             })
             .catch(error => {
@@ -29,15 +28,16 @@ const Home = () => {
 
     return (
         <div>
-            <div className="row mb-4">
-                <div className="col-6">
-                    <h1 className="m-0">IMCoding</h1>
+            <div className="row mb-3">
+                <div className="col-md-6">
+                    <h1 className="m-0">&lt;IMCoding /&gt;</h1>
                 </div>
-                <div className="col-6 d-flex justify-content-end align-items-end wda">
+                <div className="col-md-6 d-flex justify-content-end align-items-end wda">
                     {'// web.dev.articles'}
                 </div>
-
             </div>
+
+            <div className="border-top mb-5"></div>
 
             <div className="row mb-4">
                 <div className="col-md-6 mb-5">

@@ -20,6 +20,7 @@ const NewArticle = () => {
     }, [setCurrentSlug]);
 
     const [newSlug, setNewSlug] = useState(null);
+    const [message, setMessage] = useState(null);
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -37,10 +38,19 @@ const NewArticle = () => {
             markdown: article.markdown,
         })
             .then((response) => {
+                setMessage(null);
                 setHasChanged(true);
                 setNewSlug(response.data.slug);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                if (error.response) {
+                    setMessage(error.response.data);
+                    console.log('Status Code:', error.response.status, '| Details:', error.response.data);
+                } else {
+                    setMessage('An error occurred. Please try your request again.');
+                    console.log(error);
+                }
+            });
     };
 
     if (newSlug) {
@@ -50,6 +60,9 @@ const NewArticle = () => {
     return (
         <Fragment>
             <h2>Add a new article</h2>
+            {message &&
+                <p className="text-danger">{message}</p>
+            }
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="title">Title</label>

@@ -6,10 +6,6 @@ body {
     background-color: #b7b7a4;
 }
 
-.bg-lt-brown {
-    background-color: #ddbea9;
-}
-
 textarea {
     resize: both;
     width: 100%;
@@ -27,6 +23,11 @@ label {
 
 .header {
     margin-bottom: 0;
+    background-color: #ddbea9;
+}
+
+.logo-div {
+    justify-content: center !important;
 }
 
 .footer {
@@ -49,6 +50,10 @@ label {
         margin-bottom: 1.5rem;
     }
 
+    .logo-div {
+        justify-content: flex-end !important;
+    }
+
     .footer {
         margin-top: 1.5rem;
     }
@@ -58,6 +63,31 @@ label {
     }
 
     .main-container {
-        border: 1px solid #6c757d;
+        border: 1px solid #bbc6cf;
     }
+}
+
+.card1-heading {
+    background-color: #efefd5;
+    color: #6b6b5f;
+}
+
+.card2-heading {
+    background-color: #ffdab9;
+    color: #8f402e;
+}
+
+.me-pic {
+    width: 50px;
+    height: auto;
+    margin-bottom: -25px;
+}
+
+.about-text {
+    margin-left: 60px;
+}
+
+.wda {
+    color: #b7b7a4;
+    font-size: 80%;
 }

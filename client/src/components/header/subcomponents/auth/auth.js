@@ -14,20 +14,22 @@ const Auth = () => {
     };
 
     return (
-        <div>
-            {user
-                ? <Fragment>
-                    <div className="auth-divs">
-                        <span className="small text-secondary">user: </span>{user.username}
+        <div className="d-flex align-items-center main-auth-div">
+            <div className="">
+                {user
+                    ? <Fragment>
+                        <div className="auth-divs">
+                            <span className="small text-secondary">user: </span>{user.username}
+                        </div>
+                        <div className="auth-divs">
+                            <button className="auth-btn logout-btn" onClick={handleClick}>Logout</button>
+                        </div>
+                    </Fragment>
+                    : <div className="auth-divs">
+                        <Link to="/login"><button className="auth-btn login-btn">Login</button></Link>
                     </div>
-                    <div className="auth-divs">
-                        <button className="auth-btn logout-btn" onClick={handleClick}>Logout</button>
-                    </div>
-                </Fragment>
-                : <div className="auth-divs">
-                    <Link to="/login"><button className="auth-btn login-btn">Login</button></Link>
-                </div>
-            }
+                }
+            </div>
         </div>
     );
 };

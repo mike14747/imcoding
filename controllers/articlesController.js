@@ -14,6 +14,18 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/latest/details', async (req, res, next) => {
+    try {
+        const [data, error] = await Article.getLatestArticleDetails();
+        data && data.forEach(article => {
+            article.createdAt = article.createdAt.toLocaleDateString();
+        });
+        data ? res.json(data) : next(error);
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.get('/:slug', async (req, res, next) => {
     try {
         const [data, error] = await Article.getArticleBySlug(req.params.slug);

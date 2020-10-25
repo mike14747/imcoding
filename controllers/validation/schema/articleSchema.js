@@ -9,7 +9,7 @@ const articleSchema = Joi.object({
         'string.length': idError,
     }).optional(),
     title: Joi.string().min(1).max(100).required(),
-    description: Joi.string().min(0).max(255).required(),
+    description: Joi.string().min(0).max(255).allow('').required(),
     markdown: Joi.string().min(1).required(),
     slug: Joi.string().min(1),
 });

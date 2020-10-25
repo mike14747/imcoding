@@ -81,6 +81,25 @@ describe('Articles (/api/articles)', function () {
             .catch(error => done(error));
     });
 
+    it('should GET the details of the latest articles for the homepage', function (done) {
+        agent
+            .get('/api/articles/latest/details')
+            .then(response => {
+                response.should.have.status(200);
+                response.body.should.be.a('array').and.have.lengthOf.at.least(1);
+                response.body.forEach(function (element) {
+                    element.should.include.all.keys('title', 'slug', 'createdAt');
+                    element.should.not.have.all.keys('description');
+                    element.title.should.be.a('string');
+                    if (element.description) element.description.should.be.a('string');
+                    element.slug.should.be.a('string');
+                    element.createdAt.should.be.a('string');
+                });
+                done();
+            })
+            .catch(error => done(error));
+    });
+
     it('should FAIL to POST a new article because the article slug is not unique', function (done) {
         const paramsObj = {
             title: 'new title',

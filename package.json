@@ -1,6 +1,9 @@
 {
     "name": "imcoding",
     "version": "1.0.0",
+    "engines": {
+        "node": "12.x"
+    },
     "description": "Coding blog featuring articles about WebDev",
     "main": "server.js",
     "directories": {
@@ -34,7 +37,7 @@
     "bugs": {
         "url": "https://github.com/mike14747/imcoding/issues"
     },
-    "homepage": "https://imcoding.mikegullo.com/",
+    "homepage": "https://imcoding.herokuapp.com/",
     "devDependencies": {
         "concurrently": "^5.3.0",
         "eslint": "^6.8.0",

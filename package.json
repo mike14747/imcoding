@@ -34,7 +34,7 @@
     "bugs": {
         "url": "https://github.com/mike14747/imcoding/issues"
     },
-    "homepage": "https://github.com/mike14747/imcoding#readme",
+    "homepage": "https://imcoding.mikegullo.com/",
     "devDependencies": {
         "concurrently": "^5.3.0",
         "eslint": "^6.8.0",

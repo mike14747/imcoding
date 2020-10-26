@@ -44,3 +44,13 @@ heroku logs --tail
 
 ---
 
+### Deploying to Heroku
+
+Changed the build script in the server-side package.json to:
+
+```json
+"build": "cd client && npm install && npm run build",
+```
+
+---
+

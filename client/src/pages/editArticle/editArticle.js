@@ -1,9 +1,12 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import axios from 'axios';
 import { Redirect, useParams } from 'react-router-dom';
 import Loading from '../../components/loading/loading';
+import ListChangedContext from '../../context/listChangedContext';
 
 const EditArticle = () => {
+    const { setHasChanged } = useContext(ListChangedContext);
+
     const { slug } = useParams();
 
     const [article, setArticle] = useState({
@@ -47,6 +50,7 @@ const EditArticle = () => {
             slug: article.slug,
         })
             .then((response) => {
+                setHasChanged(true);
                 setErrorMsg(null);
                 setNewSlug(response.data.slug);
                 setIsUpdated(true);

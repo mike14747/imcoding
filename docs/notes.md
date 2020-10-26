@@ -38,3 +38,9 @@ Add this to **.htaccess**:
 </IfModule>
 ```
 
+---
+
+heroku logs --tail
+
+---
+

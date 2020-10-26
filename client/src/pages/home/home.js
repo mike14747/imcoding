@@ -2,11 +2,13 @@ import React, { useState, useContext, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import CurrentSlugContext from '../../context/currentSlugContext';
 import axios from 'axios';
+import Loading from '../../components/loading/loading';
 
 const Home = () => {
     const { setCurrentSlug } = useContext(CurrentSlugContext);
 
     const [latestArticles, setLatestArticles] = useState(null);
+    const [areLatestLoaded, setAreLatestLoaded] = useState(false);
 
     useEffect(() => {
         setCurrentSlug(null);
@@ -23,7 +25,8 @@ const Home = () => {
                 } else {
                     console.log(error);
                 }
-            });
+            })
+            .finally(() => setAreLatestLoaded(true));
     }, []);
 
     return (
@@ -81,7 +84,9 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        {latestArticles &&
+                        {!areLatestLoaded
+                            ? <Loading />
+                            : latestArticles &&
                             <Fragment>
                                 {latestArticles.map(article => (
                                     <div key={article.slug} className="p-2">

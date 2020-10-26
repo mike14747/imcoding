@@ -11,10 +11,6 @@ app.use(express.json());
 const { mongodbConnect } = require('./config/connectionPool');
 app.use(require('./controllers/testController'));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'client/build')));
-}
-
 mongodbConnect()
     .then(() => {
         app.use(require('./passport/expressSession'));
@@ -30,12 +26,9 @@ mongodbConnect()
     })
     .finally(() => {
         if (process.env.NODE_ENV === 'production') {
-            // app.use(express.static(path.join(__dirname, 'client/build')));
-            // app.get('*', (req, res) => {
-            //     res.sendFile(path.join(__dirname, 'client/build/index.html'));
-            // });
-            app.get('/', (req, res) => {
-                res.redirect('/index.html');
+            app.use(express.static(path.join(__dirname, 'client/build')));
+            app.get('*', (req, res) => {
+                res.sendFile(path.join(__dirname, 'client/build/index.html'));
             });
         }
     });

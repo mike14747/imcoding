@@ -31,13 +31,8 @@ const Home = () => {
 
     return (
         <div>
-            <div className="row mb-3">
-                <div className="col-md-6">
-                    <h1 className="m-0">&lt;IMCoding /&gt;</h1>
-                </div>
-                <div className="col-md-6 d-flex justify-content-end align-items-end wda">
-                    {'// web.dev.articles'}
-                </div>
+            <div className=" text-right text-muted small mb-3">
+                {'// web.dev.articles'}
             </div>
 
             <div className="border-top mb-5"></div>

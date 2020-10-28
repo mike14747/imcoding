@@ -85,7 +85,7 @@ const Home = () => {
                             <Fragment>
                                 {latestArticles.map(article => (
                                     <div key={article.slug} className="p-2">
-                                        <Link to={'/article/' + article.slug}><span className="bigger font-weight-bolder">{article.slug}</span></Link> <span className="ml-2 small text-muted">(created on: {article.createdAt})</span>
+                                        <Link to={'/article/' + article.slug}><span className="bigger font-weight-bolder">{article.title}</span></Link> <span className="ml-2 small text-muted">(created on: {article.createdAt})</span>
                                         <div className="small">
                                             {article.description}
                                         </div>

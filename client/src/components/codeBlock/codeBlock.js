@@ -31,6 +31,7 @@ const markdownCSS = {
 
 const CodeBlock = ({ language, value }) => {
     if (!language) language = 'text';
+    if (!value) value = 'error: empty codeblock';
     return (
         <SyntaxHighlighter language={language} style={vs} customStyle={markdownCSS}>
             {value}

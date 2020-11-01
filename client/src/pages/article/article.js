@@ -94,10 +94,10 @@ const Article = () => {
                                     <Link to={'/edit/' + slug}><button>Edit this article</button></Link>
                                 </div>
                                 <div>
-                                    <button onClick={onDelete} className="ml-4">Delete this article</button>
                                     {deleteButtonCounter === 1 &&
                                         <div className="text-danger text-right">Are you sure?</div>
                                     }
+                                    <button onClick={onDelete} className="ml-4">Delete this article</button>
                                 </div>
                             </div>
                         }

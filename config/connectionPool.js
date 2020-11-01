@@ -2,6 +2,9 @@ const { MongoClient } = require('mongodb');
 let db;
 let client;
 
+let mongodbURI;
+process.env.NODE_ENV === 'production' ? mongodbURI = process.env.MONGODB_URI : mongodbURI = process.env.MONGODB_URI_LOCAL;
+
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -10,7 +13,7 @@ const options = {
 
 const mongodbConnect = async () => {
     try {
-        client = await MongoClient.connect(process.env.MONGODB_URI, options);
+        client = await MongoClient.connect(mongodbURI, options);
         db = client.db();
     } catch (error) {
         console.log(error);

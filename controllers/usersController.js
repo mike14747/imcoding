@@ -54,6 +54,7 @@ router.put('/', checkAuthenticated, async (req, res, next) => {
             password: req.body.password,
         };
         await userSchema.validateAsync(paramsObj);
+        await userIdSchema.validateAsync({ _id: req.body._id });
         await isUsernameUnique(paramsObj.username, req.body._id);
         const hash = bcryptjs.hashSync(paramsObj.password, saltRounds);
         paramsObj.password = hash;

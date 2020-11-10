@@ -18,6 +18,29 @@ const CodeBlock = ({ language, value }) => {
 
 ---
 
+### HTTP Caching
+
+Added this to _.htaccess_ at imcoding@mikegullo.com:
+
+```bash
+## EXPIRES CACHING ##
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 month"
+ExpiresDefault "access plus 2 days"
+## EXPIRES CACHING ##
+
+```
+
+---
+
 ### Connection Pool
 
 The connection pool will connect to the local mongo database if **process.env.NODE_ENV** _does not equal_ **production**.

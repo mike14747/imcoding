@@ -1,6 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const helmet = require('helmet');
+
 const app = express();
+app.use(helmet());
 
 const path = require('path');
 const PORT = process.env.PORT || 3001;

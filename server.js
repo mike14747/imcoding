@@ -5,7 +5,11 @@ const helmet = require('helmet');
 const app = express();
 // app.use(helmet());
 
-app.use(helmet());
+app.use(
+    helmet({
+        contentSecurityPolicy: false,
+    }),
+);
 
 const path = require('path');
 const PORT = process.env.PORT || 3001;

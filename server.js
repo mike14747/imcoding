@@ -5,9 +5,25 @@ const helmet = require('helmet');
 const app = express();
 // app.use(helmet());
 
+// app.use(
+//     helmet({
+//         contentSecurityPolicy: false,
+//     }),
+// );
+
 app.use(
-    helmet({
-        contentSecurityPolicy: false,
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'"],
+            connectSrc: ["'self'"],
+            frameSrc: ["'self'"],
+            childSrc: ["'self'"],
+            scriptSrc: ["'self'"],
+            styleSrc: ["'self'"],
+            fontSrc: ["'self'"],
+            imgSrc: ["'self'"],
+            baseUri: ["'self'"],
+        },
     }),
 );
 

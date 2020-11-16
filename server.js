@@ -3,13 +3,37 @@ const express = require('express');
 const helmet = require('helmet');
 
 const app = express();
+
 // app.use(helmet());
 
+// app.use(
+//     helmet({
+//         contentSecurityPolicy: false,
+//     }),
+// );
+
+// default setup if nothing is explicitly spelled out
 app.use(
-    helmet({
-        contentSecurityPolicy: false,
+    helmet.contentSecurityPolicy({
+        directives: {
+            /* eslint-disable quotes */
+            'default-src': ["'self'"],
+            'base-uri': ["'self'"],
+            'block-all-mixed-content': [],
+            'font-src': ["'self'", 'https:', 'data:'],
+            'frame-ancestors': ["'self'"],
+            'img-src': ["'self'", 'data:'],
+            'object-src': ["'none'"],
+            'script-src': ["'self'"],
+            'script-src-attr': ["'none'"],
+            'style-src': ["'self'", 'https:', "'unsafe-inline'"],
+            'upgrade-insecure-requests': [],
+            /* eslint-enable quotes */
+        },
     }),
 );
+
+// console.log(helmet.contentSecurityPolicy.getDefaultDirectives());
 
 const path = require('path');
 const PORT = process.env.PORT || 3001;

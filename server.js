@@ -6,34 +6,33 @@ const app = express();
 
 // app.use(helmet());
 
-// app.use(
-//     helmet({
-//         contentSecurityPolicy: false,
-//     }),
-// );
-
-// default setup if nothing is explicitly spelled out
 app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-            /* eslint-disable quotes */
-            'default-src': ["'self'"],
-            'base-uri': ["'self'"],
-            'block-all-mixed-content': [],
-            'font-src': ["'self'", 'https:', 'data:'],
-            'frame-ancestors': ["'self'"],
-            'img-src': ["'self'", 'data:'],
-            'object-src': ["'none'"],
-            'script-src': ["'self'", "'unsafe-inline'"],
-            // 'script-src-attr': ["'none'"],
-            'style-src': ["'self'", 'https:', "'unsafe-inline'"],
-            'upgrade-insecure-requests': [],
-            /* eslint-enable quotes */
-        },
+    helmet({
+        contentSecurityPolicy: false,
     }),
 );
 
 // console.log(helmet.contentSecurityPolicy.getDefaultDirectives());
+
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives: {
+//             /* eslint-disable quotes */
+//             'default-src': ["'self'"],
+//             'base-uri': ["'self'"],
+//             'block-all-mixed-content': [],
+//             'font-src': ["'self'", 'https:', 'data:'],
+//             'frame-ancestors': ["'self'"],
+//             'img-src': ["'self'", 'data:'],
+//             'object-src': ["'none'"],
+//             'script-src': ["'self'", "'unsafe-inline'"],
+//             // 'script-src-attr': ["'none'"],
+//             'style-src': ["'self'", 'https:', "'unsafe-inline'"],
+//             'upgrade-insecure-requests': [],
+//             /* eslint-enable quotes */
+//         },
+//     }),
+// );
 
 const path = require('path');
 const PORT = process.env.PORT || 3001;

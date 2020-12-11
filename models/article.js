@@ -61,7 +61,7 @@ const Article = {
                 description: paramsObj.description,
                 markdown: paramsObj.markdown,
                 slug: paramsObj.slug,
-                updatedAt: new Date(),
+                updatedAt: new Date('2020-12-25'),
             };
             const result = await db.collection('articles').updateOne({ _id: ObjectID(paramsObj._id) }, { $set: document });
             return [result, null];

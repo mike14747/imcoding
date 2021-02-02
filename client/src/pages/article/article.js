@@ -80,7 +80,7 @@ const Article = () => {
                     </div>
                     <div className="small mb-2">
                         <span>Created: {article.createdAt}</span>
-                        {article.updatedAt && article.updatedAt > article.createdAt &&
+                        {article.updatedAt &&
                             <span className="ml-4 font-italic">Updated: {article.updatedAt}</span>
                         }
                     </div>

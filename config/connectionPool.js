@@ -2,8 +2,7 @@ const { MongoClient } = require('mongodb');
 let db;
 let client;
 
-let mongodbURI;
-process.env.NODE_ENV === 'production' ? mongodbURI = process.env.MONGODB_URI : mongodbURI = process.env.MONGODB_URI_LOCAL;
+const mongodbURI = process.env.MONGODB_URI;
 
 const options = {
     useNewUrlParser: true,

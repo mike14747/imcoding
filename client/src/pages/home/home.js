@@ -101,7 +101,7 @@ const Home = () => {
             </div>
 
             <div className="border-top pt-5 text-center">
-                <a href="mailto:connect@imcoding.mikegullo.com"><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="font-weight-bolder">Contact me</span></a> if you have any questions, comments or info on how to improve any of the code in these article. Let me know how you do it!
+                <a href={`mailto:${process.env.REACT_APP_EMAIL}`}><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="font-weight-bolder">Contact me</span></a> if you have any questions, comments or info on how to improve any of the code in these article. Let me know how you do it!
             </div>
         </div>
     );

@@ -55,7 +55,7 @@ const Home = () => {
                                 <span className="about-text">I</span>&apos;m an avid programmer, who loves writing code. I thought I&apos;d share some of what I&apos;ve learned with others and hopefully learn more from the incoming feedback in the process.
                             </p>
                             <p>
-                                Server side code interests me the most... interacting with databases (SQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation.
+                                Server side code interests me the most... interacting with databases (MySQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation.
                             </p>
                             <p>
                                 On the front end, it seems like every app I build these days always settles into me using React.

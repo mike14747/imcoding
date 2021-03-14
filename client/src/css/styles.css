@@ -27,23 +27,6 @@ label {
     display: block;
 }
 
-.header {
-    margin-bottom: 0;
-    background-color: #ddbea9;
-}
-
-.logo-div {
-    justify-content: center !important;
-}
-
-.footer {
-    margin-top: 0;
-}
-
-.header-bottom {
-    background-color: peachpuff;
-}
-
 .main-container {
     border-top: 0;
     border-bottom: 0;
@@ -52,22 +35,6 @@ label {
 }
 
 @media (min-width: 768px) {
-    .header {
-        margin-bottom: 1.5rem;
-    }
-
-    .logo-div {
-        justify-content: flex-end !important;
-    }
-
-    .footer {
-        margin-top: 1.5rem;
-    }
-
-    .header-bottom {
-        background-color: #ddbea9;
-    }
-
     .main-container {
         border: 1px solid #bbc6cf;
     }

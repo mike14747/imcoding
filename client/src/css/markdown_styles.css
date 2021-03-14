@@ -8,8 +8,9 @@ h3 {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     color: darkslategray;
-    background-color: oldlace;
-    padding: .5rem;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(253, 245, 230, 1));
+    padding: 0.5rem;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 hr {
@@ -34,4 +35,10 @@ blockquote {
 
 blockquote p {
     margin: 0.5rem 0;
+}
+
+em {
+    font-style: italic;
+    padding: 0 0.50rem;
+    background-color: oldlace;
 }

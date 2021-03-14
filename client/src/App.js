@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import axios from 'axios';
 
 import Header from './components/header/header';
+import AdminNav from './components/adminNav/adminNav';
 import Footer from './components/footer/footer';
 import Home from './pages/home/home';
 import Article from './pages/article/article';
@@ -54,7 +55,8 @@ function App() {
                     <CurrentSlugContext.Provider value={{ currentSlug, setCurrentSlug }}>
                         <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                             <Header />
-                            <div className="container py-4 flex-fill bg-white main-container">
+                            <AdminNav />
+                            <main className="container py-4 flex-fill bg-white main-container">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
                                     <Route exact path="/article/:slug" component={Article} />
@@ -63,9 +65,12 @@ function App() {
                                     <Route exact path="/login">
                                         {user ? <Redirect to="/" /> : <Login />}
                                     </Route>
+                                    <Route exact path="/admin">
+                                        {user ? <Redirect to="/" /> : <Login />}
+                                    </Route>
                                     <Route component={NoMatch} />
                                 </Switch>
-                            </div>
+                            </main>
                             <Footer />
                         </ListChangedContext.Provider>
                     </CurrentSlugContext.Provider>

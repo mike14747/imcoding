@@ -65,9 +65,6 @@ function App() {
                                     <Route exact path="/login">
                                         {user ? <Redirect to="/" /> : <Login />}
                                     </Route>
-                                    <Route exact path="/admin">
-                                        {user ? <Redirect to="/" /> : <Login />}
-                                    </Route>
                                     <Route component={NoMatch} />
                                 </Switch>
                             </main>

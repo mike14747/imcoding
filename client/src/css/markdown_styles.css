@@ -8,7 +8,6 @@ h3 {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     color: darkslategray;
-    /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(253, 245, 230, 1)); */
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(221, 190, 169, 0.8));
     padding: 0.5rem;
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);

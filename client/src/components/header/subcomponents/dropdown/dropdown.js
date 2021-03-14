@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ListChangedContext from '../../../../context/listChangedContext';
@@ -26,7 +26,7 @@ const Dropdown = () => {
     }, [hasChanged, setHasChanged]);
 
     return (
-        <div className="d-flex justify-content-center align-items-center py-2">
+        <Fragment>
             {articles && articles.length > 0 &&
                 <div className="navdropdown">
                     <div className="navdropbtn">Articles <i className="down"></i></div>
@@ -42,7 +42,7 @@ const Dropdown = () => {
                     </div>
                 </div>
             }
-        </div>
+        </Fragment>
     );
 };
 

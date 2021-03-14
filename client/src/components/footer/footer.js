@@ -2,9 +2,23 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="w-100 border-top border-secondary text-center small bg-gray6 p-2 footer">
-            &copy; 2020 imcoding
-        </div>
+        <footer className="footer">
+            <div className="footer-left">
+                &copy; 2020 imcoding
+            </div>
+            <div className="footer-right">
+                <div className="footer-item">
+                    <a href={`mailto:${process.env.REACT_APP_EMAIL}`}><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="font-weight-bolder">Contact me</span></a>
+
+                </div>
+                <div className="footer-item">
+                    Let me know if you have any questions, comments or info on how to improve any of the code in these article.
+                </div>
+                <div>
+                    I&apos;d love to know how you do it!
+                </div>
+            </div>
+        </footer>
     );
 };
 

@@ -54,7 +54,7 @@ function App() {
                     <CurrentSlugContext.Provider value={{ currentSlug, setCurrentSlug }}>
                         <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                             <Header />
-                            <div className="container py-4 flex-fill bg-white main-container">
+                            <main className="container py-4 flex-fill bg-white main-container">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
                                     <Route exact path="/article/:slug" component={Article} />
@@ -65,7 +65,7 @@ function App() {
                                     </Route>
                                     <Route component={NoMatch} />
                                 </Switch>
-                            </div>
+                            </main>
                             <Footer />
                         </ListChangedContext.Provider>
                     </CurrentSlugContext.Provider>

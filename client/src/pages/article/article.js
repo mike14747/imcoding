@@ -7,6 +7,7 @@ import CodeBlock from '../../components/codeBlock/codeBlock';
 import UserContext from '../../context/userContext';
 import ListChangedContext from '../../context/listChangedContext';
 import CurrentSlugContext from '../../context/currentSlugContext';
+import './css/markdown_styles.css';
 
 const Article = () => {
     const { slug } = useParams();
@@ -82,24 +83,21 @@ const Article = () => {
                             <span className="ml-4 font-italic">Updated: {article.updatedAt}</span>
                         }
                     </div>
-                    <div className="row mb-4">
-                        <div className="col-6">
-                            {article.description && article.description}
-                        </div>
-                        {user &&
-                            <div className="col-6 d-flex justify-content-end align-items-end">
-                                <div>
-                                    <Link to={'/edit/' + slug}><button>Edit this article</button></Link>
-                                </div>
-                                <div>
-                                    {deleteButtonCounter === 1 &&
-                                        <div className="text-danger text-right">Are you sure?</div>
-                                    }
-                                    <button onClick={onDelete} className="ml-4">Delete this article</button>
-                                </div>
-                            </div>
-                        }
+
+                    <div className="mb-4">
+                        {article.description && article.description}
                     </div>
+                    {user &&
+                        <div className="mb-4">
+                            <div className="text-right">
+                                <Link to={'/edit/' + slug}><button>Edit this article</button></Link>
+                                <button onClick={onDelete} className="ml-4">Delete this article</button>
+                            </div>
+                            {deleteButtonCounter === 1 &&
+                                <div className="text-danger text-right">Are you sure?</div>
+                            }
+                        </div>
+                    }
                     <div className="border-top pt-4">
                         <ReactMarkdown
                             source={article.markdown}

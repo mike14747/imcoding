@@ -13,9 +13,10 @@ import NoMatch from './pages/noMatch/noMatch';
 import Login from './pages/login/login';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
 
-import './css/my_style.css';
+// import './css/my_style.css';
+import './css/my_reset.css';
 import './css/styles.css';
-import './css/markdown_styles.css';
+import './css/my_margins_padding.css';
 
 import ListChangedContext from './context/listChangedContext';
 import UserContext from './context/userContext';

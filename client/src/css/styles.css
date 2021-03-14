@@ -10,6 +10,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: linear-gradient(
+        to right bottom,
+        rgba(183, 183, 164, 1),
+        rgba(169, 200, 221, 1)
+    );
 }
 
 textarea {
@@ -64,3 +69,153 @@ label {
     color: #b7b7a4;
     font-size: 80%;
 }
+
+.w-100 {
+    width: 100%;
+}
+
+.mw-100 {
+    max-width: 100%;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+small {
+    font-size: 80%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-top {
+    border-top: 1px solid #d3d3d3;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.bigger {
+    font-size: 120%;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.font-weight-bolder {
+    font-weight: bolder;
+}
+
+/* used only on the home page */
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.border {
+    border: 1px solid #d3d3d3;
+}
+
+.col,
+.col-auto,
+.col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* end used only on the homepage */
+
+/* used only in App.js */
+
+.flex-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+/* end used only in App.js */

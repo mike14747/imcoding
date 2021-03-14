@@ -35,8 +35,6 @@ const Home = () => {
                 {'// web.dev.articles'}
             </div>
 
-            {/* <div className="border-top mb-5"></div> */}
-
             <div className="row mb-4">
                 <div className="col-md-6 mb-5">
                     <div className="border">

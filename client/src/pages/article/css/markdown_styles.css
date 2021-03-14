@@ -4,18 +4,20 @@ h1 {
 }
 
 h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
     color: darkslategray;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(221, 190, 169, 0.8));
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(169, 200, 221, 0.8));
     padding: 0.5rem;
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 hr {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin: 2rem auto !important;
     width: 75%;
     background-color: darkslategray;
 }

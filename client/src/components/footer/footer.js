@@ -13,7 +13,7 @@ const Footer = () => {
 
                 </div>
                 <div className="footer-item">
-                    Let me know if you have any questions, comments or info on how to improve any of the code in these article.
+                    Let me know if you have any questions, comments or info on how to improve any of the code in these articles.
                 </div>
                 <div>
                     I&apos;d love to know how you do it!

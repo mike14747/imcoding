@@ -4,6 +4,8 @@ import CurrentSlugContext from '../../context/currentSlugContext';
 import axios from 'axios';
 import Loading from '../../components/loading/loading';
 
+import './css/home.css';
+
 const Home = () => {
     const { setCurrentSlug } = useContext(CurrentSlugContext);
 
@@ -31,7 +33,7 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className=" text-right text-muted small mb-3">
+            <div className="text-right wda mb-3">
                 {'// web.dev.articles'}
             </div>
 
@@ -41,16 +43,16 @@ const Home = () => {
                         <div className="card1-heading p-2">
                             <div className="row">
                                 <div className="col-auto pr-0">
-                                    <img src="/images/my_profile_pic.png" alt="Me" className="me-pic" />
+                                    <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" />
                                 </div>
                                 <div className="col">
                                     <h4 className="m-0">About me</h4>
                                 </div>
                             </div>
                         </div>
-                        <div className="p-2">
+                        <div className="p-4">
                             <p>
-                                <span className="about-text">I</span>&apos;m an avid programmer, who loves writing code. I thought I&apos;d share some of what I&apos;ve learned with others and hopefully learn more from the incoming feedback in the process.
+                                <span className="indent">I</span>&apos;m an avid programmer, who loves writing code. I thought I&apos;d share some of what I&apos;ve learned with others and hopefully learn more from the incoming feedback in the process.
                             </p>
                             <p>
                                 Server side code interests me the most... interacting with databases (MySQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation.
@@ -68,19 +70,12 @@ const Home = () => {
                 <div className="col-md-6 mb-4">
                     <div className="border">
                         <div className="card2-heading p-2">
-                            <div className="row">
-                                <div className="col-auto pr-0">
-                                    <img src="/images/article_icon.png" alt="Articles" />
-                                </div>
-                                <div className="col">
-                                    <h4 className="m-0">Latest Articles</h4>
-                                </div>
-                            </div>
+                            <h4 className="m-0">Latest Articles</h4>
                         </div>
                         {!areLatestLoaded
                             ? <Loading />
                             : latestArticles &&
-                            <Fragment>
+                            <div className="p-2">
                                 {latestArticles.map(article => (
                                     <div key={article.slug} className="p-2">
                                         <Link to={'/article/' + article.slug}><span className="bigger font-weight-bolder">{article.title}</span></Link> <span className="ml-2 small text-muted">(created on: {article.createdAt})</span>
@@ -89,10 +84,10 @@ const Home = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </Fragment>
+                            </div>
                         }
                         <div className="mt-4 p-2 small">
-                            ...more coming on a regular basis
+                            ...more coming on a semi-regular basis
                         </div>
                     </div>
                 </div>

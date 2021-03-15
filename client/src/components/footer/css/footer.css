@@ -23,9 +23,3 @@
 .footer-item {
     margin-bottom: 0.5rem;
 }
-
-@media (min-width: 768px) {
-    .footer {
-        margin-top: 1.5rem;
-    }
-}

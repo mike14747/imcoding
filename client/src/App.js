@@ -13,7 +13,6 @@ import NoMatch from './pages/noMatch/noMatch';
 import Login from './pages/login/login';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
 
-// import './css/my_style.css';
 import './css/my_reset.css';
 import './css/styles.css';
 import './css/my_margins_padding.css';
@@ -57,7 +56,7 @@ function App() {
                         <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                             <Header />
                             <AdminNav />
-                            <main className="container py-4 flex-fill bg-white main-container">
+                            <main className="container flex-fill">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
                                     <Route exact path="/article/:slug" component={Article} />

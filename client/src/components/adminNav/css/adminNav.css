@@ -21,10 +21,3 @@
     justify-content: flex-start;
     margin-left: 1rem;
 }
-
-@media (min-width: 768px) {
-    .admin-nav {
-        margin-top: -1.5rem;
-        margin-bottom: 1.5rem;
-    }
-}

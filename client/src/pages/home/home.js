@@ -70,7 +70,28 @@ const Home = () => {
                 <div className="col-md-6 mb-4">
                     <div className="border">
                         <div className="card2-heading p-2">
-                            <h4 className="m-0">Latest Articles</h4>
+                            <div className="row">
+                                <div className="col">
+                                    <h4 className="m-0">Latest Articles</h4>
+                                </div>
+                                <div className="col-auto">
+                                    <div className="article-icon">
+                                        <p className="article-icon-h3">
+                                            At varius vel pharetra vel turpis nunc eget.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                        <p className="article-icon-quote">
+                                            Nunc sed velit dignissim sodales ut eu sem. Enim sed faucibus turpis in eu mi. Justo nec ultrices dui sapien eget mi proin sed libero.
+                                        </p>
+                                        <p>
+                                            At in tellus integer feugiat scelerisque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Lacinia at quis risus sed vulputate.
+                                        </p>
+                                    </div>
+                                    {/* <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" /> */}
+                                </div>
+                            </div>
                         </div>
                         {!areLatestLoaded
                             ? <Loading />

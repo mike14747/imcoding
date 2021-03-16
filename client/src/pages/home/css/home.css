@@ -61,15 +61,40 @@
 }
 
 .indent {
-    margin-left: 75px;
+    margin-left: 50px;
 }
 
 .wda {
     color: #b7b7a4;
 }
 
-.article_icon {
-    width: 30px;
-    height: auto;
-    margin-bottom: -25px;
+.article-icon {
+    padding: 0.15rem;
+    font-size: 12.5%;
+    background-color: #ffffff;
+    border: 1px #999999 solid;
+    width: 60px;
+    height: 60px;
+    margin-bottom: -35px;
+    overflow: hidden;
+    border-radius: 0.1rem;
+}
+
+.article-icon > p {
+    margin-bottom: 0.20rem;
+}
+
+.article-icon-h3 {
+    color: darkslategray;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(169, 200, 221, 0.8));
+    padding: 0.10rem;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.article-icon-quote {
+    text-align: left;
+    padding: 0.10rem 0.15rem;
+    margin: 0;
+    border-left: 2px solid #ee6c4d;
+    background-color: beige;
 }

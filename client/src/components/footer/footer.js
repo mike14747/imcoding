@@ -9,7 +9,7 @@ const Footer = () => {
             </div>
             <div className="footer-right">
                 <div className="mb-2">
-                    <a href={`mailto:${process.env.REACT_APP_EMAIL}`}><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="font-weight-bolder">Contact me</span></a>
+                    <a href={`mailto:${process.env.REACT_APP_EMAIL}`}><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="contact">Contact me</span></a>
 
                 </div>
                 <div className="mb-2">

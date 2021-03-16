@@ -78,6 +78,8 @@
     margin-bottom: -35px;
     overflow: hidden;
     border-radius: 0.1rem;
+    transform: rotate(2deg);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 .article-icon > p {

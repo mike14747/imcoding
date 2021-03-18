@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #ddbea9;
     display: flex;
-    border-bottom: 1px #6c757d solid;
+    border-bottom: 1px #909090 solid;
     padding: 0.25rem;
 }
 
@@ -22,7 +22,7 @@
 
 h1 {
     margin: 0 !important;
-    color: #212529;
+    color: #080706;
     font-size: 1.75rem !important;
     text-decoration: none;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -32,7 +32,7 @@ h1 {
 }
 
 .logo-text {
-    color: #212529;
+    color: #080706;
     text-decoration: none;
 }
 

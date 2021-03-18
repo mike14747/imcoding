@@ -2,7 +2,7 @@
     width: 100%;
     border-top: 1px #6c757d solid;
     font-size: 80%;
-    background-color: #d3d3d3;
+    background-color: #c3c3c3;
     display: flex;
     line-height: 1.15;
 }
@@ -19,6 +19,7 @@
     text-align: center;
     border-left: 1px #999999 solid;
     padding: 0.5rem;
+    color: #333333;
 }
 
 .mb-2 {

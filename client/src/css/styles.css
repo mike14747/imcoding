@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(to right bottom, rgba(183, 183, 164, 1), rgba(169, 200, 221, 1));
+    background: linear-gradient(to right bottom, rgba(174, 221, 169, 1), rgba(169, 200, 221, 1));
 }
 
 .container {

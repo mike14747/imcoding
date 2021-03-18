@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import UserContext from '../../../../context/userContext';
 import axios from 'axios';
 import './css/auth.css';
@@ -13,14 +13,9 @@ const Auth = () => {
     };
 
     return (
-        <div className="auth-divs">
-            <div className="auth-divs">
-                <span className="small text-secondary">user: </span>{user.username}
-            </div>
-            <div className="auth-divs">
-                <button className="auth-btn logout-btn" onClick={handleClick}>Logout</button>
-            </div>
-        </div>
+        <Fragment>
+            <button className="logout-btn" onClick={handleClick}><span className="logout">Logout:</span> {user.username}</button>
+        </Fragment>
     );
 };
 

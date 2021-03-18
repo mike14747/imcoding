@@ -33,14 +33,14 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className="text-right wda mb-3">
+            <div className="text-right wda mb-1">
                 {'// web.dev.articles'}
             </div>
 
-            <div className="row mb-4">
-                <div className="col-md-6 mb-5">
+            <section className="row mb-4">
+                <article className="col-md-6 mb-5">
                     <div className="border">
-                        <div className="card1-heading p-2">
+                        <section className="card1-heading p-2">
                             <div className="row">
                                 <div className="col-auto pr-0">
                                     <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" />
@@ -49,8 +49,8 @@ const Home = () => {
                                     <h4 className="m-0">About me</h4>
                                 </div>
                             </div>
-                        </div>
-                        <div className="p-4">
+                        </section>
+                        <section className="p-4">
                             <p>
                                 <span className="indent">I</span>&apos;m an avid programmer, who loves writing code. I thought I&apos;d share some of what I&apos;ve learned with others and hopefully learn more from the incoming feedback in the process.
                             </p>
@@ -63,13 +63,13 @@ const Home = () => {
                             <p>
                                 Though I continue in my career as an electronics technician, I hope to make the transition into programming in the near future.
                             </p>
-                        </div>
+                        </section>
                     </div>
-                </div>
+                </article>
 
-                <div className="col-md-6 mb-4">
+                <aside className="col-md-6 mb-4">
                     <div className="border">
-                        <div className="card2-heading p-2">
+                        <section className="card2-heading p-2">
                             <div className="row">
                                 <div className="col">
                                     <h4 className="m-0">Latest Articles</h4>
@@ -92,11 +92,11 @@ const Home = () => {
                                     {/* <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" /> */}
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         {!areLatestLoaded
                             ? <Loading />
                             : latestArticles &&
-                            <div className="p-2">
+                            <section className="p-2">
                                 {latestArticles.map(article => (
                                     <div key={article.slug} className="p-2">
                                         <Link to={'/article/' + article.slug}><span className="bigger font-weight-bolder">{article.title}</span></Link> <span className="ml-2 small text-muted">(created on: {article.createdAt})</span>
@@ -105,14 +105,14 @@ const Home = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </div>
+                            </section>
                         }
-                        <div className="mt-4 p-2 small">
+                        <section className="mt-4 p-2 small">
                             ...more coming on a semi-regular basis
-                        </div>
+                        </section>
                     </div>
-                </div>
-            </div>
+                </aside>
+            </section>
         </Fragment>
     );
 };

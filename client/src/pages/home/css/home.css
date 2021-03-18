@@ -44,12 +44,12 @@
 }
 
 .card1-heading {
-    background-color: #A9C8DD;
+    background-color: rgba(169, 200, 221, 1);
     color: #333333;
 }
 
 .card2-heading {
-    background-color:#CECEC0;
+    background-color:rgba(174, 221, 169, 1);
     color: #333333;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .wda {
-    color: #b7b7a4;
+    color: rgba(128, 128, 128, 0.6);
 }
 
 .article-icon {
@@ -88,7 +88,7 @@
 
 .article-icon-h3 {
     color: darkslategray;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(169, 200, 221, 0.8));
+    background: linear-gradient(175deg, rgba(169, 200, 221, 0.4), rgba(174, 221, 169, 0.4));
     padding: 0.10rem;
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
 }

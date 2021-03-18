@@ -3,22 +3,58 @@
     background-color: #ddbea9;
     display: flex;
     border-bottom: 1px #6c757d solid;
-    padding: 0.50rem;
+    padding: 0.25rem;
 }
 
 .header-left {
-    flex: 2;
-    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-right {
     flex: 1;
     display: flex;
-    align-self: center;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo {
-    max-width: 100%;
-    height: auto;
+h1 {
+    margin: 0 !important;
+    color: #212529;
+    font-size: 1.75rem !important;
+    text-decoration: none;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo-text {
+    color: #212529;
+    text-decoration: none;
+}
+
+.logo-text:hover {
+    color: #024dbc;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+@media (min-width: 576px) {
+    .header-left {
+        flex: 2;
+    }
+
+    .header-right {
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+        letter-spacing: 2px;
+    }
 }

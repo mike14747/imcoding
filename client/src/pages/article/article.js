@@ -74,21 +74,22 @@ const Article = () => {
             {!isLoaded
                 ? <Loading />
                 : <article>
-                    <h1 className="border-bottom mb-4 pb-1 text-uppercase">
-                        {article.title}
-                    </h1>
-                    <div className="small mb-2">
+                    <section>
+                        <h2 className="border-bottom mb-4 pb-1 text-uppercase">
+                            {article.title}
+                        </h2>
+                    </section>
+                    <section className="small mb-2">
                         <span>Created: {article.createdAt}</span>
                         {article.updatedAt &&
                             <span className="ml-4 font-italic">Updated: {article.updatedAt}</span>
                         }
-                    </div>
-
-                    <div className="mb-4">
+                    </section>
+                    <section className="mb-4">
                         {article.description && article.description}
-                    </div>
+                    </section>
                     {user &&
-                        <div className="mb-4">
+                        <section className="mb-4">
                             <div className="text-right">
                                 <Link to={'/edit/' + slug}><button>Edit this article</button></Link>
                                 <button onClick={onDelete} className="ml-4">Delete this article</button>
@@ -96,14 +97,14 @@ const Article = () => {
                             {deleteButtonCounter === 1 &&
                                 <div className="text-danger text-right">Are you sure?</div>
                             }
-                        </div>
+                        </section>
                     }
-                    <div className="border-top pt-4">
+                    <section className="border-top pt-4">
                         <ReactMarkdown
                             source={article.markdown}
                             renderers={{ code: CodeBlock }}
                         />
-                    </div>
+                    </section>
                 </article>
             }
         </Fragment >

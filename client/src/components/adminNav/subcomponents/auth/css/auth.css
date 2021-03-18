@@ -1,35 +1,27 @@
-.auth-divs {
-    text-align: center;
-}
-
-.auth-btn {
-    color: #f5f5dc;
-    padding: 0.15rem 0.5rem;
+.logout-btn {
+    color: #333333;
+    background-color: #a9c8dd;
+    padding: 0.15rem 0.25rem;
     border: 1px #999999 solid;
-    border-radius: 0.25rem;
     font-size: 1rem;
-    line-height: 1.5;
     text-decoration: none;
     display: inline-block;
-    font-weight: 400;
     text-align: center;
-    vertical-align: middle;
     cursor: pointer;
-    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-.auth-btn:hover {
-    color: #ffffff;
-    border: 1px #777777 solid;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.33);
+.logout-btn:hover {
+    background-color: #ddd3a9;
+    color: #cc0000;
 }
 
-.logout-btn {
-    background-color: #ee6c4d;
-    color: #f5f5dc;
+.logout {
+    font-variant-caps: small-caps;
 }
 
-.login-btn {
-    background-color: forestgreen;
-    color: #f5f5dc;
+@media (min-width: 576px) {
+    .logout-btn {
+        font-size: 1.10rem;
+    }
 }

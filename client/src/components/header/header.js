@@ -7,8 +7,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header-left">
-                {/* <Link to="/"><img src="/images/logo.png" alt="IMCoding" className="logo" /></Link> */}
-                <Link to="/"><span className="logo-text">{'<IMCoding />'}</span></Link>
+                <h1><Link to="/"><span className="logo-text">{'<IMCoding />'}</span></Link></h1>
             </div>
             <nav className="header-right">
                 <Dropdown />

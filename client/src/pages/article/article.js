@@ -74,9 +74,9 @@ const Article = () => {
             {!isLoaded
                 ? <Loading />
                 : <article>
-                    <h1 className="border-bottom mb-4 pb-1 text-uppercase">
+                    <h2 className="border-bottom mb-4 pb-1 text-uppercase">
                         {article.title}
-                    </h1>
+                    </h2>
                     <div className="small mb-2">
                         <span>Created: {article.createdAt}</span>
                         {article.updatedAt &&

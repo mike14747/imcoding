@@ -36,6 +36,10 @@ h1 {
     text-decoration: none;
 }
 
+.logo-text:hover {
+    color: #024dbc;
+}
+
 a:hover {
     text-decoration: none !important;
 }

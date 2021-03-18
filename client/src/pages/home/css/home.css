@@ -44,12 +44,12 @@
 }
 
 .card1-heading {
-    background-color: rgba(169, 200, 221, 1);
+    background-color: rgba(169, 200, 221, 0.5);
     color: #333333;
 }
 
 .card2-heading {
-    background-color:rgba(174, 221, 169, 1);
+    background-color:rgba(174, 221, 169, 0.5);
     color: #333333;
 }
 

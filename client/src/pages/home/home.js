@@ -37,6 +37,19 @@ const Home = () => {
                 {'// web.dev.articles'}
             </div>
 
+            <section className="mb-4">
+                <article>
+                    <article>
+                        <h5>
+                            IMCoding is more of my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog.
+                        </h5>
+                        <p>
+                            I&apos;m posting articles with descriptions and a lot of sample code.
+                        </p>
+                    </article>
+                </article>
+            </section>
+
             <section className="row mb-4">
                 <article className="col-md-6 mb-5">
                     <div className="border">
@@ -58,7 +71,7 @@ const Home = () => {
                                 Server side code interests me the most... interacting with databases (MySQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation.
                             </p>
                             <p>
-                                On the front end, it seems like every app I build these days always settles into me using React.
+                                On the front end, it seems like every app I build these days always settles into me using React (or a React-based framework like Next.js).
                             </p>
                             <p>
                                 Though I continue in my career as an electronics technician, I hope to make the transition into programming in the near future.

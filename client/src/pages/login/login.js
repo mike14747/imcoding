@@ -31,7 +31,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login to Add, Edit or Delete Articles</h1>
+            <h4>Login to Add, Edit or Delete Articles</h4>
             <form onSubmit={handleSubmit}>
                 <div className="my-4">
                     <label htmlFor="username">Username</label>

@@ -34,7 +34,7 @@ const Dropdown = () => {
                         {articles.map(article => (
                             <div className="item" key={article._id}>
                                 {currentSlug && (article.slug === currentSlug)
-                                    ? <Link to={'/article/' + article.slug} className="viewing"><span className="current-gt">&gt;</span>{article.title}</Link>
+                                    ? <Link to={'/article/' + article.slug} className="viewing"><span className="current-text">-{article.title}-</span></Link>
                                     : <Link to={'/article/' + article.slug} onClick={() => setCurrentSlug(article.slug)}>{article.title}</ Link>
                                 }
                             </div>

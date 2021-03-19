@@ -59,7 +59,7 @@ const NewArticle = () => {
 
     return (
         <Fragment>
-            <h2>Add a new article</h2>
+            <h4>Add a new article</h4>
             {message &&
                 <p className="text-danger">{message}</p>
             }

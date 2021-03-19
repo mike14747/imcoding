@@ -8,7 +8,7 @@
 }
 
 .border {
-    border: 1px solid #c3c3c3;
+    border: 1px solid #d3d3d3;
 }
 
 .col,
@@ -44,13 +44,13 @@
 }
 
 .card1-heading {
-    background-color: rgba(169, 200, 221, 0.5);
-    color: #332c27;
+    background-color: rgba(176, 212, 237, 1);
+    color: #333333;
 }
 
 .card2-heading {
-    background-color:rgba(174, 221, 169, 0.5);
-    color: #332c27;
+    background-color: rgba(211, 220, 202, 1);
+    color: #333333;
 }
 
 .me-pic {
@@ -65,14 +65,14 @@
 }
 
 .wda {
-    color: rgba(128, 128, 128, 0.6);
+    color: #cfcfcf;
 }
 
 .article-icon {
     padding: 0.15rem;
     font-size: 12.5%;
     background-color: #ffffff;
-    border: 1px #909090 solid;
+    border: 1px #999999 solid;
     width: 60px;
     height: 60px;
     margin-bottom: -35px;
@@ -83,19 +83,23 @@
 }
 
 .article-icon > p {
-    margin-bottom: 0.20rem;
+    margin-bottom: 0.2rem;
 }
 
 .article-icon-h3 {
-    color: darkslategray;
-    background: linear-gradient(175deg, rgba(169, 200, 221, 0.5), rgba(174, 221, 169, 0.5));
-    padding: 0.10rem;
+    color: #333333;
+    background: linear-gradient(
+        178deg,
+        rgba(255, 255, 255, 0.25),
+        rgba(176, 212, 237, 0.50)
+    );
+    padding: 0.1rem;
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 .article-icon-quote {
     text-align: left;
-    padding: 0.10rem 0.15rem;
+    padding: 0.1rem 0.15rem;
     margin: 0;
     border-left: 2px solid #ee6c4d;
     background-color: beige;

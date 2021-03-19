@@ -88,13 +88,8 @@
 
 .article-icon-h3 {
     color: #333333;
-    background: linear-gradient(
-        178deg,
-        rgba(255, 255, 255, 0.25),
-        rgba(176, 212, 237, 0.50)
-    );
+    background-color: rgba(176, 212, 237, 0.25);
     padding: 0.1rem;
-    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 .article-icon-quote {

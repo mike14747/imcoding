@@ -3,14 +3,18 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f6f6f6;
+    background-color: #cfcfcf;
 }
 
 #app-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(to right bottom, rgba(174, 221, 169, 0.4), rgba(169, 200, 221, 0.4));
+    background: linear-gradient(
+        to right bottom,
+        rgba(212, 237, 176, 0.5),
+        rgba(176, 212, 237, 0.5)
+    );
 }
 
 .container {
@@ -28,7 +32,7 @@ body {
         max-width: 540px;
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
-        border: 1px solid #909090;
+        border: 1px solid #999999;
     }
 }
 
@@ -86,11 +90,11 @@ label {
 }
 
 .border-top {
-    border-top: 1px solid #c3c3c3;
+    border-top: 1px solid #d3d3d3;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #c3c3c3;
+    border-bottom: 1px solid #d3d3d3;
 }
 
 .bg-white {

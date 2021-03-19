@@ -1,5 +1,5 @@
 .navdropbtn {
-    background-color: #a9c8dd;
+    background-color: #B0D4ED;
     color: #333333;
     padding: 0.3rem 0.5rem;
     margin: 0;
@@ -13,8 +13,7 @@
 }
 
 .navdropbtn:hover {
-    background-color: #ddd3a9;
-    color: #cc0000;
+    background-color: #E8B998;
 }
 
 .navdropdown {
@@ -26,7 +25,7 @@
     text-align: left;
     display: none;
     position: absolute;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -34,15 +33,15 @@
 }
 
 .navdropdown-content a {
-    color: #cc0000;
-    padding: 1rem 0.5rem;
+    color: #216290;
+    padding: 0.5rem 0.5rem;
     text-decoration: none;
     display: block;
 }
 
 .navdropdown-content a:hover {
-    background-color: #dddddd;
-    color: #006699;
+    background-color: #1B5278;
+    color: #F9FCFE;
     text-decoration: none;
 }
 
@@ -51,18 +50,18 @@
 }
 
 .navdropdown:hover .navdropbtn {
-    background-color: #ddd3a9;
-    color: #cc0000;
+    background-color: #F2D9C7;
+    color: #A85C26;
 }
 
 .item {
-    border-top: 1px #cccccc solid;
-    border-right: 1px #cccccc solid;
-    border-left: 1px #cccccc solid;
+    border-top: 1px #d3d3d3 solid;
+    border-right: 1px #d3d3d3 solid;
+    border-left: 1px #d3d3d3 solid;
 }
 
 i {
-    border: solid #6c757d;
+    border: solid #333333;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -76,15 +75,15 @@ i {
 
 .viewing {
     cursor: default;
-    color: #999999 !important;
+    color: #7c8787 !important;
 }
 
 .viewing:hover {
-    background-color: #dddddd !important;
+    background-color: #ffffff !important;
 }
 
-.current-gt {
-    margin: 0 0.25rem 0 0.5rem;
+.current-text {
+    margin-left: 0.50rem;
 }
 
 @media (min-width: 576px) {

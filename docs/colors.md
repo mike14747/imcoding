@@ -65,3 +65,8 @@ Articles dropdown colors:
 -   Content item background hover: #1B5278
 
 ---
+
+cornflowerblue:
+
+-   #6495ED
+-   rgba(100, 149, 237, 1)

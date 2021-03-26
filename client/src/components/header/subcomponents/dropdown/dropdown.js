@@ -29,7 +29,9 @@ const Dropdown = () => {
         <Fragment>
             {articles && articles.length > 0 &&
                 <div className="navdropdown">
-                    <div className="navdropbtn">Articles <i className="down"></i></div>
+                    <div className="navdropbtn">
+                        Articles <i className="down"></i>
+                    </div>
                     <div className="navdropdown-content">
                         {articles.map(article => (
                             <div className="item" key={article._id}>

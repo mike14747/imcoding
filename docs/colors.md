@@ -1,8 +1,8 @@
 Header background:
 
--   Desert Sand
--   #EDC9AF
--   rgba(237, 201, 175, 1)
+-   cornflowerblue:
+-   #6495ED
+-   rgba(100, 149, 237, 1)
 
 ---
 
@@ -22,7 +22,7 @@ Green background:
 
 Body and Footer background:
 
--   #cfcfcf
+-   #d3d3d3
 
 ---
 
@@ -56,17 +56,12 @@ Font colors:
 Articles dropdown colors:
 
 -   Button text: #333333
--   Button text hover: #A85C26
--   Button background: #B0D4ED
--   Button background hover: #F2D9C7
+-   Button text hover: #216290
+-   Button background: rgba(255, 255, 255, 0.5)
+-   Button background hover: rgba(255, 255, 255, 0.75)
 -   Content item text: #216290
 -   Content item text hover: #F9FCFE
 -   Content item background: #ffffff
 -   Content item background hover: #1B5278
 
 ---
-
-cornflowerblue:
-
--   #6495ED
--   rgba(100, 149, 237, 1)

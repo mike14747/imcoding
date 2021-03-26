@@ -29,22 +29,20 @@ h1 {
     margin: 0 !important;
     color: #333333;
     font-size: 1.5rem !important;
-    text-decoration: none;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     letter-spacing: 1px;
     white-space: nowrap;
     padding: 0.50rem 0.5rem;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.25));
     line-height: 1 !important;
 }
 
-h1:hover {
-    color: #216290;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75));
+.home {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.25));
+    padding: 0.25rem .50rem;
 }
 
-a:hover {
-    text-decoration: none !important;
+.home:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75));
 }
 
 @media (min-width: 576px) {

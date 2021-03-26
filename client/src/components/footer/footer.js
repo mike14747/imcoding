@@ -10,8 +10,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-right">
                     <div className="mb-2">
-                        <a href={`mailto:${process.env.REACT_APP_EMAIL}`}><img src="/images/email.png" alt="Email me" className="mr-2" /><span className="contact">Contact me</span></a>
-
+                        <a href={`mailto:${process.env.REACT_APP_EMAIL}`}>
+                            <img src="/images/email.png" alt="Email me" className="email-icon" /><span className="contact">Contact me</span>
+                        </a>
                     </div>
                     <div className="mb-2">
                         Let me know if you have any questions, comments or info on how to improve any of the code in these articles.
@@ -21,7 +22,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 };
 

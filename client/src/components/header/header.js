@@ -6,12 +6,14 @@ import './css/header.css';
 const Header = () => {
     return (
         <header className="header">
-            <div className="header-left">
-                <h1><Link to="/"><span className="logo-text">{'<IMCoding />'}</span></Link></h1>
+            <div className="header-container">
+                <div className="header-left">
+                    <Link to="/"><h1>{'<IMCoding />'}</h1></Link>
+                </div>
+                <nav className="header-right">
+                    <Dropdown />
+                </nav>
             </div>
-            <nav className="header-right">
-                <Dropdown />
-            </nav>
         </header>
     );
 };

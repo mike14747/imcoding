@@ -3,7 +3,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #cfcfcf;
+    background-color: #d3d3d3;
 }
 
 #app-wrapper {
@@ -20,7 +20,7 @@ body {
 .container {
     background-color: #ffffff;
     width: 100%;
-    padding: 1rem;
+    padding: 15px;
     margin: 0 auto;
     border: 0;
     -ms-flex: 1 1 auto !important;
@@ -29,7 +29,7 @@ body {
 
 @media (min-width: 576px) {
     .container {
-        max-width: 540px;
+        max-width: 544px;
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         border: 1px solid #999999;
@@ -38,7 +38,7 @@ body {
 
 @media (min-width: 768px) {
     .container {
-        max-width: 720px;
+        max-width: 736px;
     }
 }
 
@@ -50,7 +50,7 @@ body {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1140px;
+        max-width: 1168px;
     }
 }
 

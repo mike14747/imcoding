@@ -2,9 +2,41 @@
     width: 100%;
     border-top: 1px #999999 solid;
     font-size: 80%;
-    background-color: #cfcfcf;
-    display: flex;
+    background-color: #d3d3d3;
     line-height: 1.15;
+}
+
+.footer-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+@media (min-width: 576px) {
+    .footer-container {
+        max-width: 544px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        max-width: 736px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-container {
+        max-width: 1168px;
+    }
 }
 
 .footer-left {

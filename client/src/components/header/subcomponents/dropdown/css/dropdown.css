@@ -1,8 +1,9 @@
 .navdropbtn {
-    background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.25));
     color: #333333;
-    padding: 0.25rem 0.50rem;
-    font-size: 1.50rem;
+    font-weight: 600;
+    padding: 0.65rem 0.50rem;
+    font-size: 1.2rem;
     cursor: pointer;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -11,7 +12,7 @@
 
 .navdropdown {
     position: relative;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .navdropdown-content {
@@ -34,7 +35,7 @@
 
 .navdropdown-content a:hover {
     background-color: #1B5278;
-    color: #F9FCFE;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -43,7 +44,7 @@
 }
 
 .navdropdown:hover .navdropbtn {
-    background-color: rgba(255, 255, 255, 0.75);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75));
     color: #216290;
 }
 
@@ -60,7 +61,7 @@ i {
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
-    margin: 0 0 5px 3px;
+    margin: 0 0 4px 3px;
 }
 
 .down {
@@ -79,15 +80,4 @@ i {
 
 .current-text {
     margin-left: 0.50rem;
-}
-
-@media (min-width: 768px) {
-    .navdropbtn {
-        font-size: 2rem;
-        padding: 0.25rem 1rem;
-    }
-
-    i {
-        margin: 0 0 7px 7px;
-    }
 }

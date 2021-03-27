@@ -102,7 +102,6 @@ const Home = () => {
                                             At in tellus integer feugiat scelerisque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Lacinia at quis risus sed vulputate.
                                         </p>
                                     </div>
-                                    {/* <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" /> */}
                                 </div>
                             </div>
                         </section>

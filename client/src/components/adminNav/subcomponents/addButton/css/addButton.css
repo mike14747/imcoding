@@ -1,23 +1,15 @@
 .add-btn {
     background-color: #B0D4ED;
     color: #333333;
-    padding: 0.15rem 0.25rem;
+    padding: 0.25rem 0.50rem;
     font-size: 1rem;
-    border: 1px #999999 solid;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
     cursor: pointer;
-    font-variant-caps: small-caps;
     letter-spacing: 1px;
     white-space: nowrap;
 }
 
 .add-btn:hover {
-    background-color: #F2D9C7;
-    color: #A85C26;
-}
-
-@media (min-width: 576px) {
-    .add-btn {
-        font-size: 1.10rem;
-    }
+    background-color: #DAEBF6;
+    color: #216290;
 }

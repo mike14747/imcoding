@@ -14,7 +14,7 @@ const Auth = () => {
 
     return (
         <Fragment>
-            <button className="logout-btn" onClick={handleClick}><span className="logout">Logout:</span> {user.username}</button>
+            <button className="logout-btn" onClick={handleClick}>Logout: {user.username}</button>
         </Fragment>
     );
 };

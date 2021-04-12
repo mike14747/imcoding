@@ -40,9 +40,12 @@ const Home = () => {
             <section className="mb-4">
                 <article>
                     <article>
-                        <h5>
-                            IMCoding is more of my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog.
-                        </h5>
+                        <h3>
+                            What is IMCoding?
+                        </h3>
+                        <p>
+                            IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog.
+                        </p>
                         <p>
                             I&apos;m posting articles with descriptions and a lot of sample code.
                         </p>
@@ -74,7 +77,7 @@ const Home = () => {
                                 On the front end, it seems like every app I build these days always settles into me using React (or a React-based framework like Next.js).
                             </p>
                             <p>
-                                Though I continue in my career as an electronics technician, I hope to make the transition into programming in the near future.
+                                I&apos;m currently working as an electronics technician, but am seeking a full-time position as a web developer.
                             </p>
                         </section>
                     </div>
@@ -102,7 +105,6 @@ const Home = () => {
                                             At in tellus integer feugiat scelerisque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Lacinia at quis risus sed vulputate.
                                         </p>
                                     </div>
-                                    {/* <img src="/images/mike_profile_pic.jpg" alt="My profile pic" className="me-pic" /> */}
                                 </div>
                             </div>
                         </section>

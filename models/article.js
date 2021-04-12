@@ -33,7 +33,7 @@ const Article = {
     },
     getLatestArticleDetails: async () => {
         try {
-            const result = await db.collection('articles').find({ }).project({ _id: 0, markdown: 0, updatedAt: 0 }).limit(3).sort({ createdAt: -1, title: 1 }).toArray();
+            const result = await db.collection('articles').find({ }).project({ _id: 0, markdown: 0, updatedAt: 0 }).limit(5).sort({ createdAt: -1, title: 1 }).toArray();
             return [result, null];
         } catch (error) {
             return [null, error];

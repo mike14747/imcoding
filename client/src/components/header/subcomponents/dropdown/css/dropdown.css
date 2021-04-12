@@ -34,7 +34,7 @@
 }
 
 .navdropdown-content a:hover {
-    background-color: #1B5278;
+    background-color: rgba(27, 82, 120, 0.75);
     color: #ffffff;
     text-decoration: none;
 }

@@ -3,18 +3,18 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #d3d3d3;
+    background-color: #fcfcf0;
 }
 
 #app-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to right bottom,
-        rgba(212, 237, 176, 0.5),
-        rgba(176, 212, 237, 0.5)
-    );
+        rgba(212, 237, 176, 0.25),
+        rgba(176, 212, 237, 0.25)
+    ); */
 }
 
 .container {

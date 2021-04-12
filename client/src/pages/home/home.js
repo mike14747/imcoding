@@ -55,7 +55,7 @@ const Home = () => {
 
             <section className="row mb-4">
                 <article className="col-md-6 mb-5">
-                    <div className="border">
+                    <div className="card">
                         <section className="card1-heading p-2">
                             <div className="row">
                                 <div className="col-auto pr-0">
@@ -84,7 +84,7 @@ const Home = () => {
                 </article>
 
                 <aside className="col-md-6 mb-4">
-                    <div className="border">
+                    <div className="card">
                         <section className="card2-heading p-2">
                             <div className="row">
                                 <div className="col">

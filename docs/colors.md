@@ -65,3 +65,5 @@ Articles dropdown colors:
 -   Content item background hover: #1B5278
 
 ---
+
+Not sure if the above colors have been updated since being documented. I have to check on that.

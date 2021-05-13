@@ -56,7 +56,7 @@ function App() {
                         <ListChangedContext.Provider value={{ hasChanged, setHasChanged }}>
                             <Header />
                             <AdminNav />
-                            <main className="container flex-fill main-container">
+                            <main className="main-container">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
                                     <Route exact path="/article/:slug" component={Article} />

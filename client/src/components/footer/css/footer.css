@@ -8,34 +8,23 @@
 
 .footer-container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    max-width: 1334px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 480px) {
     .footer-container {
-        max-width: 544px;
+        width: calc(100% - 1rem);
     }
 }
 
 @media (min-width: 768px) {
     .footer-container {
-        max-width: 736px;
-    }
-}
-
-@media (min-width: 992px) {
-    .footer-container {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .footer-container {
-        max-width: 1168px;
+        width: calc(100% - 2rem);
     }
 }
 

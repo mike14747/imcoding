@@ -13,7 +13,7 @@ import NoMatch from './pages/noMatch/noMatch';
 import Login from './pages/login/login';
 import ProtectedRoute from './components/protectedRoute/protectedRoute';
 
-import './css/my_reset.css';
+import './css/my_base_modified.css';
 import './css/styles.css';
 import './css/my_margins_padding.css';
 

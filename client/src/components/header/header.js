@@ -9,11 +9,8 @@ const Header = () => {
             <div className="header-container">
                 <div className="header-left">
                     <Link to="/">
-                        <div className="home">
-                            <img src="images/home-icon.png" alt="Home" />
-                        </div>
+                        <img src="images/logo.png" alt="Home" className="logo" />
                     </Link>
-                    <h1>{'<IMCoding />'}</h1>
                 </div>
                 <nav className="header-right">
                     <Dropdown />

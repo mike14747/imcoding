@@ -36,14 +36,6 @@
     border: 1px rgba(0, 0, 0, 0.25) solid;
 }
 
-@media (min-width: 768px) {
-    .col-md-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
 .card1-heading {
     background-color: rgba(176, 212, 237, 1);
     color: #333333;
@@ -67,6 +59,10 @@
 
 .wda {
     color: #cfcfcf;
+    text-align: right;
+    line-height: 1;
+    margin-top: -0.50rem;
+    margin-bottom: 0.25rem;
 }
 
 .article-icon {
@@ -99,4 +95,12 @@
     margin: 0;
     border-left: 2px solid #ee6c4d;
     background-color: beige;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }

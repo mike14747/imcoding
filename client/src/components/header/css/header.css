@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    background-color: rgba(100, 149, 237, 0.50);
+    background-color: rgba(255, 255, 255, 1);
     border-bottom: 1px #999999 solid;
 }
 
@@ -9,6 +9,7 @@
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    max-width: 1334px;
 }
 
 .header-left {
@@ -25,52 +26,26 @@
     justify-content: flex-end;
 }
 
-h1 {
-    margin: 0 !important;
-    color: #333333;
-    font-size: 1.5rem !important;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    padding: 0.50rem 0.5rem;
-    line-height: 1 !important;
+.logo {
+    margin: 0;
+    width: 236px;
+    max-width: 80%;
+    height: auto;
+    padding: 0.50rem;
 }
 
-.home {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.25));
-    padding: 0.25rem .50rem;
+.logo:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.home:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75));
-}
-
-@media (min-width: 576px) {
+@media (min-width: 480px) {
     .header-container {
-        max-width: 544px;
+        width: calc(100% - 1rem);
     }
 }
 
 @media (min-width: 768px) {
     .header-container {
-        max-width: 736px;
-    }
-
-    h1 {
-        font-size: 2rem !important;
-        letter-spacing: 2px;
-        padding: 0.25rem 1rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .header-container {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .header-container {
-        max-width: 1168px;
+        width: calc(100% - 2rem);
     }
 }

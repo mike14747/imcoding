@@ -33,21 +33,18 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className="text-right wda mb-1">
+            <div className="wda">
                 {'// web.dev.articles'}
             </div>
 
             <section className="mb-4">
                 <article>
                     <article>
-                        <h3>
+                        <h4>
                             What is IMCoding?
-                        </h3>
+                        </h4>
                         <p>
-                            IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog.
-                        </p>
-                        <p>
-                            I&apos;m posting articles with descriptions and a lot of sample code.
+                            IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog. I&apos;m posting articles with descriptions and a lot of sample code.
                         </p>
                     </article>
                 </article>

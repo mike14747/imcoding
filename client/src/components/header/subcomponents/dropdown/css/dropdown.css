@@ -1,12 +1,19 @@
 .navdropbtn {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.25));
-    color: #333333;
-    font-weight: 600;
-    padding: 0.65rem 0.50rem;
-    font-size: 1.2rem;
+    background-color: #e93f00;
+    color: #ffffff;
+    padding: 0.25rem 0.50rem;
+    font-size: 0.80rem;
+    font-weight: normal;
     cursor: pointer;
     letter-spacing: 1px;
     white-space: nowrap;
+    margin: 0.25rem 0.50rem 0.15rem 0rem;
+}
+
+.navdropbtn::after {
+    font-size: 80%;
+    margin-left: 0.50rem;
+    content: "\25BC";
 }
 
 
@@ -44,8 +51,7 @@
 }
 
 .navdropdown:hover .navdropbtn {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75));
-    color: #216290;
+    background-color: #832300;
 }
 
 .item {
@@ -80,4 +86,23 @@ i {
 
 .current-text {
     margin-left: 0.50rem;
+}
+
+@media (min-width: 480px) {
+    .navdropbtn {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.90rem;
+        letter-spacing: 1.5px;
+        margin: 0.35rem 0.50rem 0.15rem 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .navdropbtn {
+        padding: 0.50rem 0.75rem;
+        font-size: 1rem;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        margin: 0.50rem 0.50rem 0.25rem 0;
+    }
 }

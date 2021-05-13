@@ -30,7 +30,7 @@ const Dropdown = () => {
             {articles && articles.length > 0 &&
                 <div className="navdropdown">
                     <div className="navdropbtn">
-                        Articles <i className="down"></i>
+                        ARTICLES
                     </div>
                     <div className="navdropdown-content">
                         {articles.map(article => (

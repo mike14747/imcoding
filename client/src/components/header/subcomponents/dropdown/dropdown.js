@@ -28,21 +28,21 @@ const Dropdown = () => {
     return (
         <Fragment>
             {articles && articles.length > 0 &&
-                <div className="navdropdown">
+                <nav className="nav">
                     <div className="navdropbtn">
                         ARTICLES
                     </div>
-                    <div className="navdropdown-content">
+                    <ul className="navdropdown-content">
                         {articles.map(article => (
-                            <div className="item" key={article._id}>
+                            <li className="item" key={article._id}>
                                 {currentSlug && (article.slug === currentSlug)
                                     ? <Link to={'/article/' + article.slug} className="viewing"><span className="current-text">-{article.title}-</span></Link>
                                     : <Link to={'/article/' + article.slug} onClick={() => setCurrentSlug(article.slug)}>{article.title}</ Link>
                                 }
-                            </div>
+                            </li>
                         ))}
-                    </div>
-                </div>
+                    </ul>
+                </nav>
             }
         </Fragment>
     );

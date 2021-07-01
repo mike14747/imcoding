@@ -97,6 +97,12 @@
     background-color: beige;
 }
 
+.description {
+    margin: 1rem auto 1.5rem 0;
+    /* width: auto; */
+    max-width: 80ch;
+}
+
 @media (min-width: 768px) {
     .col-md-6 {
         -ms-flex: 0 0 50%;

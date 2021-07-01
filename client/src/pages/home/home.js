@@ -39,14 +39,12 @@ const Home = () => {
 
             <section className="mb-4">
                 <article>
-                    <article>
-                        <h4>
-                            What is IMCoding?
-                        </h4>
-                        <p>
-                            IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog. I&apos;m posting articles with descriptions and a lot of sample code.
-                        </p>
-                    </article>
+                    <h4>
+                        What is IMCoding?
+                    </h4>
+                    <p className="description">
+                        IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog. I&apos;m posting articles with descriptions and a lot of sample code.
+                    </p>
                 </article>
             </section>
 

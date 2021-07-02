@@ -1,13 +1,14 @@
 .navdropbtn {
-    background-color: #e93f00;
-    color: #ffffff;
+    color: #e93f00;
+    background-color: transparent;
     padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-    font-weight: normal;
+    font-size: 1rem;
+    font-weight: bolder;
     cursor: pointer;
     letter-spacing: 1px;
     white-space: nowrap;
     margin: 0.25rem 0.5rem 0.15rem 0rem;
+    transition: background-color 0.6s;
 }
 
 .navdropbtn::after {
@@ -55,7 +56,9 @@ ul.navdropdown-content > li > a:hover {
 }
 
 .nav:hover > .navdropbtn {
-    background-color: #832300;
+    outline: 1px dotted rgba(0, 0, 0, 0.75);
+    background-color: rgba(255, 255, 255, 1);
+    transition: background-color 0.3s;
 }
 
 li.item {
@@ -86,7 +89,7 @@ ul.navdropdown-content > li.item:last-child > a {
 @media (min-width: 480px) {
     .navdropbtn {
         padding: 0.35rem 0.65rem;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         letter-spacing: 1.5px;
         margin: 0.35rem 0.5rem 0.15rem 0;
     }
@@ -95,8 +98,7 @@ ul.navdropdown-content > li.item:last-child > a {
 @media (min-width: 768px) {
     .navdropbtn {
         padding: 0.5rem 0.75rem;
-        font-size: 1rem;
-        font-weight: bolder;
+        font-size: 1.2rem;
         letter-spacing: 2px;
         margin: 0.5rem 0.5rem 0.25rem 0;
     }

@@ -1,7 +1,8 @@
 .header {
     width: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    border-bottom: 1px #999999 solid;
+    /* background-color: rgba(255, 255, 255, 1); */
+    /* border-bottom: 1px #999999 solid; */
+    margin-bottom: 1rem;
 }
 
 .header-container {
@@ -27,25 +28,37 @@
 }
 
 .logo {
-    margin: 0;
+    margin: 0 0 0 1rem;
     width: 236px;
     max-width: 80%;
     height: auto;
-    padding: 0.50rem;
+    padding: 0.50rem 0 0.10rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.6s;
 }
 
 .logo:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
+    border-bottom: 2px solid black;
+    transition: 0.3s;
 }
 
 @media (min-width: 480px) {
     .header-container {
         width: calc(100% - 1rem);
     }
+
+    .logo{
+        margin-left: 1.15rem;
+    }
 }
 
 @media (min-width: 768px) {
     .header-container {
         width: calc(100% - 2rem);
+    }
+
+    .logo {
+        margin-left: 1.25rem;
     }
 }

@@ -12,6 +12,8 @@ describe('Test /api routes', function () {
 
 
     const checkRoutes = () => {
+        before(done => setTimeout(done, 500));
+        
         it('should check and see if the API routes are ready', function (done) {
             agent.get('/api/test')
                 .end(function (error, response) {

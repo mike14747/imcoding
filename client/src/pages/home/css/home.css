@@ -58,7 +58,7 @@
 }
 
 .wda {
-    color: #cfcfcf;
+    color: rgba(0, 0, 0, 0.60);
     text-align: right;
     line-height: 1;
     margin-top: -0.50rem;

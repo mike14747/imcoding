@@ -1,8 +1,6 @@
 const agent = require('./utils/serverInit');
 
 describe('Test /api routes', function () {
-    before(done => setTimeout(done, 500));
-
     const runTests = () => {
         require('./tests/authAPI');
         require('./tests/articlesAPI');
@@ -12,7 +10,7 @@ describe('Test /api routes', function () {
 
 
     const checkRoutes = () => {
-        before(done => setTimeout(done, 500));
+        before(done => setTimeout(done, 1000));
         
         it('should check and see if the API routes are ready', function (done) {
             agent.get('/api/test')

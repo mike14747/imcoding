@@ -4,22 +4,15 @@ const helmet = require('helmet');
 
 const app = express();
 
-// app.use(
-//     helmet({
-//         contentSecurityPolicy: false,
-//     }),
-// );
-
 app.use(helmet());
-
 app.use(
     helmet.contentSecurityPolicy({
         useDefaults: false,
         directives: {
             /* eslint-disable quotes */
             'default-src': ["'self'"],
-            'script-src': ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
-            'style-src': ["'self'", "'unsafe-inline'"],
+            'script-src': ["'self'"],
+            'style-src': ["'self'"],
             'img-src': ["'self'", 'data:'],
             'font-src': ["'self'"],
             /* eslint-enable quotes */

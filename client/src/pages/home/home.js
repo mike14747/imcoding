@@ -33,14 +33,10 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className="wda">
-                {'// web.dev.articles'}
-            </div>
-
             <section className="mb-4">
                 <article>
                     <h4>
-                        What is IMCoding?
+                        What is ImCoding?
                     </h4>
                     <p className="description">
                         IMCoding is as much my own personal cheatsheet for all topics &apos;WebDev&apos; than it is an actual blog. I&apos;m posting articles with descriptions and a lot of sample code.
@@ -72,7 +68,7 @@ const Home = () => {
                                 On the front end, it seems like every app I build these days always settles into me using React (or a React-based framework like Next.js).
                             </p>
                             <p>
-                                I&apos;m currently working as an electronics technician, but am seeking a full-time position as a web developer.
+                                I&apos;m currently working as an electronics technician, but am seeking a full-time position as a web developer... <a href="https://www.mikegullo.com/" target="_blank" rel="noopener noreferrer">more about that</a>.
                             </p>
                         </section>
                     </div>

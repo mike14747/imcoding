@@ -9,12 +9,12 @@ const Header = () => {
             <div className="header-container">
                 <div className="header-left">
                     <Link to="/">
-                        <img src="images/logo.png" alt="Home" className="logo" />
+                        <img src="images/imcoding_logo.png" alt="Home" className="logo" />
                     </Link>
                 </div>
-                <nav className="header-right">
+                <div className="header-right">
                     <Dropdown />
-                </nav>
+                </div>
             </div>
         </header>
     );

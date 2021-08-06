@@ -27,7 +27,7 @@ const Dropdown = () => {
 
     return (
         <Fragment>
-            {articles && articles.length > 0 &&
+            {articles?.length > 0 &&
                 <nav className="nav">
                     <div className="navdropbtn">
                         ARTICLES

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const CurrentSlugContext = createContext(null);
+const CurrentSlugContext = createContext('');
 
 export default CurrentSlugContext;

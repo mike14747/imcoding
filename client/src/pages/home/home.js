@@ -62,10 +62,7 @@ const Home = () => {
                                 <span className="indent">I</span>&apos;m an avid programmer, who loves writing code. I thought I&apos;d share some of what I&apos;ve learned with others and hopefully learn more from the incoming feedback in the process.
                             </p>
                             <p>
-                                Server side code interests me the most... interacting with databases (MySQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation.
-                            </p>
-                            <p>
-                                On the front end, it seems like every app I build these days always settles into me using React (or a React-based framework like Next.js).
+                                I'm equally happy working on the back-end or front-end. I love interacting with databases (MySQL as well as MongoDB), writing resolver functions, RESTful APIs, integration testing and validation. On the front end, it seems like every app I build these days always settles into me using React (or a React-based framework like Next.js).
                             </p>
                             <p>
                                 I&apos;m currently working as an electronics technician, but am seeking a full-time position as a web developer... <a href="https://www.mikegullo.com/" target="_blank" rel="noopener noreferrer">more about that</a>.

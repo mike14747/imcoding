@@ -22,13 +22,17 @@ const markdownCSS = {
 };
 
 const lineNumberCSS = {
-    color: '#666666', // this doesn't seem to work so for now I've turned off showLineNumbers
+    color: '#666666', // this property doesn't seem to work so for now I've turned off showLineNumbers
     paddingRight: '1.25rem',
     textAlign: 'left',
 };
 
 vs.url = vs.symbol = vs.number = vs.boolean = vs.variable = vs.constant = vs.inserted = vs['class-name'] = vs['language-json'] = vs['token.property'] = vs['line-numbers-rows > span:before'] = {
     color: '#298180',
+};
+
+vs['attr-name'] = vs.property = vs.regex = vs.entity = {
+    color: '#e60000',
 };
 
 const CodeBlock = ({ language, value }) => {

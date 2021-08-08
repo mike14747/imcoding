@@ -3,9 +3,10 @@ h2 {
 }
 
 h3 {
-    color: #333333;
-    background-color: rgba(176, 212, 237, 0.25);
-    padding: 0.5rem;
+    color: rgba(0, 0, 0, 1);
+    font-size: clamp(1.25rem, 0.7vw + 0.7rem, 1.50rem) !important;
+    /* background-color: rgba(176, 212, 237, 0.25);
+    padding: 0.5rem; */
 }
 
 hr {
@@ -36,6 +37,6 @@ blockquote p {
 
 em {
     font-style: italic;
-    padding: 0 0.5rem;
-    background-color: #f1f1d6;
+    padding: 0 0.35rem;
+    background-color: rgba(241, 241, 214, 0.60);
 }

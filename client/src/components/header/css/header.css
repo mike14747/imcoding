@@ -26,15 +26,15 @@
 }
 
 .logo {
-    margin: 0 0 -35px 0.50rem;
-    width: 150px;
+    margin: 0 0 -32px 0;
+    width: 128px;
     max-width: 90%;
     height: auto;
     transition: 0.6s;
 }
 
 .logo:hover {
-    outline: 1px dotted rgba(0, 0, 0, 0.50);
-    background-color: rgba(255, 255, 255, 0.75);
+    outline: 1px dashed rgba(0, 0, 0, 0.75);
+    background-color: rgba(255, 255, 255, 0.25);
     transition: 0.3s;
 }

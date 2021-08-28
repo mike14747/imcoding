@@ -88,7 +88,7 @@ h2 {
 
 h3 {
     font-size: 1.25rem;
-    font-size: clamp(1.1rem, 0.7vw + 0.7rem, 1.50rem);
+    font-size: clamp(1.25rem, 0.7vw + 0.7rem, 1.50rem);
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -163,7 +163,7 @@ blockquote {
     margin: 1.5rem 0;
     border-left: 8px solid coral;
     background-color: beige;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.2rem);
 }
 
 .blockquote-footer {

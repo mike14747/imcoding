@@ -4,7 +4,7 @@ h2 {
 
 h3 {
     color: rgba(0, 0, 0, 1);
-    font-size: clamp(1.25rem, 0.7vw + 0.7rem, 1.50rem) !important;
+    font-size: clamp(1.25rem, 0.7vw + 0.7rem, 1.50rem);
     /* background-color: rgba(176, 212, 237, 0.25);
     padding: 0.5rem; */
 }

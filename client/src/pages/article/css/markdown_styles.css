@@ -20,7 +20,7 @@ hr {
     background-color: #333333;
 }
 
-li {
+.article li {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: clamp(1rem, 0.55vw + 0.55rem, 1.1rem);
@@ -39,18 +39,18 @@ blockquote p {
     margin: 0.5rem 0;
 }
 
-em {
+.article em {
     font-style: italic;
     padding: 0 0.25rem;
     background-color: rgba(241, 241, 214, 0.75);
 }
 
-p {
+.article p {
     font-size: clamp(1rem, 0.55vw + 0.55rem, 1.1rem);
     max-width: 120ch;
 }
 
-strong {
+.article strong {
     color: firebrick;
     background-color: rgba(0, 0, 0, .05);
     padding: 0 0.25rem;

@@ -73,7 +73,7 @@ const Article = () => {
         <Fragment>
             {!isLoaded
                 ? <Loading />
-                : <article>
+                : <article className="article">
                     <section>
                         <h2 className="heading border-bottom">
                             {article.title}

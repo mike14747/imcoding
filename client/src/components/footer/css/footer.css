@@ -1,18 +1,14 @@
 .footer {
     width: 100%;
-    border-top: 2px #70c1b3 solid;
-    background-color: #f0f0f0;
-    line-height: 1.15;
-}
-
-.footer-container {
-    width: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
     max-width: 1334px;
+    border-top: 2px #70c1b3 solid;
+    background-color: #fcfcfc;
 }
+
 
 .footer-flex {
     display: flex;

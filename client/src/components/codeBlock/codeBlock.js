@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vs from 'react-syntax-highlighter/dist/esm/styles/prism/vs';
+import tomorrow from 'react-syntax-highlighter/dist/esm/styles/prism/tomorrow';
 import { jsx, javascript, json, css, bash, sql, markup, ignore } from 'react-syntax-highlighter/dist/esm/languages/prism';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
@@ -15,24 +15,12 @@ SyntaxHighlighter.registerLanguage('markup', markup);
 SyntaxHighlighter.registerLanguage('ignore', ignore);
 
 const markdownCSS = {
-    backgroundColor: '#fcfcfc',
-    fontSize: '1rem',
-    margin: '0rem 1rem 1rem 1rem',
-    padding: '0.5rem',
-};
-
-const lineNumberCSS = {
-    color: '#666666', // this property doesn't seem to work so for now I've turned off showLineNumbers
-    paddingRight: '1.25rem',
-    textAlign: 'left',
-};
-
-vs.url = vs.symbol = vs.number = vs.boolean = vs.variable = vs.constant = vs.inserted = vs['class-name'] = vs['language-json'] = vs['token.property'] = vs['line-numbers-rows > span:before'] = {
-    color: '#298180',
-};
-
-vs['attr-name'] = vs.property = vs.regex = vs.entity = {
-    color: '#e60000',
+    fontSize: 'clamp(0.9rem, 0.55vw + 0.6rem, 1rem)',
+    margin: '1rem 1rem 2rem 1rem',
+    padding: '1rem',
+    maxWidth: '120ch',
+    overflowX: 'auto',
+    boxShadow: '5px 5px 5px 0px rgba(0, 0, 0, 0.5)',
 };
 
 const CodeBlock = ({ language, value }) => {
@@ -41,11 +29,10 @@ const CodeBlock = ({ language, value }) => {
     return (
         <SyntaxHighlighter
             language={language}
-            style={vs}
+            style={tomorrow}
             customStyle={markdownCSS}
             wrapLongLines={false}
             showLineNumbers={false}
-            lineNumberStyle={lineNumberCSS}
         >
             {value}
         </SyntaxHighlighter>

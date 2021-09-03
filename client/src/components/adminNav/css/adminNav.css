@@ -1,7 +1,11 @@
 .admin-nav {
     width: 100%;
-    background-color: #d3d3d3;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
+    flex-direction: row;
+    max-width: 1334px;
+    background-color: #d3d3d3;
     border-bottom: 1px #6c757d solid;
     padding: 0.25rem;
 }

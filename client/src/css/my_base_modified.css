@@ -11,12 +11,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('../assets/images/seamless-bg.jpg') repeat, rgba(0, 0, 0, 0.15);
 }
 
 body {
-    font-family: "Segoe UI", Calibri, "Gill Sans", Geneva, Noto, Arial, Helvetica,
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -455,7 +454,7 @@ template {
     width: 100%;
     margin: 0 auto;
     max-width: 1334px;
-    padding: 4rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
     background-color: #ffffff;
 }
 
@@ -473,15 +472,7 @@ template {
 }
 
 @media (min-width: 480px) {
-    .main-container,
-    .container {
-        width: calc(100% - 1rem);
-    }
 }
 
 @media (min-width: 768px) {
-    .main-container,
-    .container {
-        width: calc(100% - 2rem);
-    }
 }

@@ -1,12 +1,14 @@
-h2 {
-    text-transform: uppercase;
+h2.heading {
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    color: firebrick;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
-    color: rgba(0, 0, 0, 1);
+    color: darkslategrey;
     font-size: clamp(1.25rem, 0.7vw + 0.7rem, 1.50rem);
-    /* background-color: rgba(176, 212, 237, 0.25);
-    padding: 0.5rem; */
 }
 
 hr {

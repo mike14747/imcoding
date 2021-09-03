@@ -75,7 +75,7 @@ const Article = () => {
                 ? <Loading />
                 : <article>
                     <section>
-                        <h2 className="border-bottom mb-4 pb-1 text-uppercase">
+                        <h2 className="heading border-bottom">
                             {article.title}
                         </h2>
                     </section>

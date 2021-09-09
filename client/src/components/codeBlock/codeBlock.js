@@ -33,6 +33,8 @@ const CodeBlock = ({ language, value }) => {
             customStyle={markdownCSS}
             wrapLongLines={false}
             showLineNumbers={false}
+            // spread props
+            // PreTag={'pre tabindex="0"'}
         >
             {value}
         </SyntaxHighlighter>

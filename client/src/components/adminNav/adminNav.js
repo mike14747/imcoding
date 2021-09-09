@@ -11,14 +11,14 @@ const AdminNav = () => {
     return (
         <Fragment>
             {user &&
-                <div className="admin-nav">
+                <nav aria-label="Admin Navigation" className="admin-nav">
                     <div className="nav-add">
                         <AddButton />
                     </div>
                     <div className="nav-auth">
                         <Auth />
                     </div>
-                </div>
+                </nav>
             }
         </Fragment>
 

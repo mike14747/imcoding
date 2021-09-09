@@ -28,7 +28,7 @@ const Dropdown = () => {
     return (
         <Fragment>
             {articles?.length > 0 &&
-                <nav className="nav">
+                <nav aria-label="Main Navigation" className="nav">
                     <div className="navdropbtn">
                         ARTICLES
                     </div>

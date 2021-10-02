@@ -42,7 +42,8 @@ blockquote p {
 .article em {
     font-style: italic;
     padding: 0 0.25rem;
-    background-color: rgba(241, 241, 214, 0.75);
+    color: firebrick;
+    background-color: #f5f5f5;
 }
 
 .article p {

@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
             </div>
             <p className="copyright">
-                &copy; 2020 imcoding
+                &copy; 2020 ImCoding
             </p>
         </footer >
     );

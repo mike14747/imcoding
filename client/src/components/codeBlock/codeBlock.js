@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import tomorrow from 'react-syntax-highlighter/dist/esm/styles/prism/tomorrow';
@@ -31,27 +30,25 @@ const markdownCSS = {
     boxShadow: '5px 5px 5px 0px rgba(0, 0, 0, 0.5)',
 };
 
-const CodeBlock = ({ language, value }) => {
-    if (!language) language = 'text';
-    if (!value) value = '';
-    return (
-        <SyntaxHighlighter
-            language={language}
-            style={tomorrow}
-            customStyle={markdownCSS}
-            wrapLongLines={false}
-            showLineNumbers={false}
-            // spread props
-            // PreTag={'pre tabindex="0"'}
-        >
-            {value}
-        </SyntaxHighlighter>
-    );
-};
-
-CodeBlock.propTypes = {
-    language: PropTypes.string,
-    value: PropTypes.string,
+const CodeBlock = {
+    code({ node, inline, className, children, ...props }) {
+        let match = /language-(\w+)/.exec(className || '');
+        if (!match) match = [ 'language-txt', 'text' ]; // this is not a real or supported language, but it does make the text white in a code block
+        return !inline && match ? (
+            <SyntaxHighlighter
+                children={String(children).replace(/\n$/, '')}
+                style={tomorrow}
+                customStyle={markdownCSS}
+                language={match[1]}
+                PreTag="div"
+                {...props}
+            />
+        ) : (
+            <code className={className} {...props}>
+                {children}
+            </code>
+        );
+    },
 };
 
 export default CodeBlock;

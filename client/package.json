@@ -12,7 +12,7 @@
         "axios": "^0.21.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-markdown": "^5.0.3",
+        "react-markdown": "^7.1.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^4.0.0",
         "react-syntax-highlighter": "^15.2.1"

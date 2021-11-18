@@ -98,10 +98,9 @@ const Article = () => {
                         </div>
                     }
                     <div className="border-top pt-4">
-                        <ReactMarkdown
-                            source={article.markdown}
-                            renderers={{ code: CodeBlock }}
-                        />
+                        <ReactMarkdown components={CodeBlock}>
+                            {article.markdown}
+                        </ReactMarkdown>
                     </div>
                 </article>
             }

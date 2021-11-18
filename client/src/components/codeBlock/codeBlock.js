@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import tomorrow from 'react-syntax-highlighter/dist/esm/styles/prism/tomorrow';
-import { jsx, javascript, json, css, bash, sql, markup, ignore } from 'react-syntax-highlighter/dist/esm/languages/prism';
+// import { jsx, javascript, json, css, bash, sql, markup, ignore } from 'react-syntax-highlighter/dist/esm/languages/prism';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import json from 'react-syntax-highlighter/dist/esm/languages/prism/json';
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
+import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
+import sql from 'react-syntax-highlighter/dist/esm/languages/prism/sql';
+import markup from 'react-syntax-highlighter/dist/esm/languages/prism/markup';
+import ignore from 'react-syntax-highlighter/dist/esm/languages/prism/ignore';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 SyntaxHighlighter.registerLanguage('js', javascript);

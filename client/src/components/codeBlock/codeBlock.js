@@ -33,21 +33,23 @@ const markdownCSS = {
 const CodeBlock = {
     code({ node, inline, className, children, ...props }) {
         let match = /language-(\w+)/.exec(className || '');
-        if (!match) match = [ 'language-txt', 'text' ]; // this is not a real or supported language, but it does make the text white in a code block
-        return !inline && match ? (
-            <SyntaxHighlighter
-                children={String(children).replace(/\n$/, '')}
-                style={tomorrow}
-                customStyle={markdownCSS}
-                language={match[1]}
-                PreTag="div"
-                {...props}
-            />
-        ) : (
-            <code className={className} {...props}>
-                {children}
-            </code>
-        );
+        if (!match) match = ['language-txt', 'text']; // this is not a real or supported language, but it does make the text white in a code block
+        return !inline && match
+            ? (
+                <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, '')}
+                    style={tomorrow}
+                    customStyle={markdownCSS}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                />
+            )
+            : (
+                <code className={className} {...props}>
+                    {children}
+                </code>
+            );
     },
 };
 

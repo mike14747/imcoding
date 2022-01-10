@@ -17,7 +17,7 @@
 npm i
 ```
 
-Include these environmental variable in your .env file:
+-   Include these environmental variable in your .env file:
 
 ```txt
 MONGODB_URI_LOCAL=mongodb://localhost:27017/
@@ -30,6 +30,12 @@ ES_KEY=cookie_name
 SESSION_SECRET=your_session_secret
 HASHED_PASSWORD=your_hashed_password
 REACT_APP_EMAIL=your@email.com
+```
+
+-   Start the app.
+
+```bash
+npm run start
 ```
 
 ---

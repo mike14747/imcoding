@@ -1,15 +1,7 @@
 # <img src="client/public/images/imcoding_logo4.png" width="30" height="30" alt="ImCoding" title="ImCoding" /> ImCoding
 
-### What does this project do?
-
--   It's a place to share some of my notes and personal cheatsheets for all topics 'WebDev'... and sort of a coding blog merged into one.
--   The articles are written in markdown and stored in a remote MongoDB database via Atlas.
--   There is an authentication system setup so you can add, edit and delete content if you are logged in.
-
----
-
-![ImCoding](https://img.shields.io/badge/ImCoding-gray.svg?style=flat-square "ImCoding")
-![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-214fc6.svg?style=flat-square&labelColor=coral "by: Mike Gullo")
+![ImCoding](https://img.shields.io/badge/ImCoding-228b22.svg?style=flat-square "ImCoding")
+![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-232323.svg?style=flat-square&labelColor=dc143c "by: Mike Gullo")
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB "React")
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=ffffff "MongoDB")
@@ -19,6 +11,16 @@
 ![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=ffffff "Mocha")
 ![Chai](https://img.shields.io/badge/Chai-A30701?style=flat-square&logo=chai&logoColor=ffffff "Chai")
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=flat-square&logo=heroku&logoColor=ffffff "Heroku")
+
+---
+
+### What does this project do?
+
+-   It's a place to share some of my notes and personal cheatsheets for all topics 'WebDev'... and sort of a coding blog merged into one.
+-   The articles are written in markdown and stored in a remote MongoDB database via Atlas.
+-   There is an authentication system setup so you can add, edit and delete content if you are logged in.
+
+---
 
 ### How you can use this project?
 

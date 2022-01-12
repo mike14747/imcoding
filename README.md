@@ -9,7 +9,7 @@
 ---
 
 ![ImCoding](https://img.shields.io/badge/ImCoding-gray.svg?style=flat-square "ImCoding")
-![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-808080.svg?style=flat-square&labelColor=coral "by: Mike Gullo")
+![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-214fc6.svg?style=flat-square&labelColor=coral "by: Mike Gullo")
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB "React")
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white "MongoDB")

@@ -16,6 +16,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black "JavaScript")
 ![Passport](https://img.shields.io/badge/Passport-000000?style=flat-square&logo=passport&logoColor=34E27A "Passport")
 ![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=ffffff "Mocha")
+![Chai](https://img.shields.io/badge/Chai-A30701?style=flat-square&logo=chai&logoColor=ffffff "Chai")
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=flat-square&logo=heroku&logoColor=ffffff "Heroku")
 <!--
 ![]( "")

@@ -12,16 +12,13 @@
 ![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-214fc6.svg?style=flat-square&labelColor=coral "by: Mike Gullo")
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB "React")
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white "MongoDB")
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black "JavaScript")
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=ffffff "MongoDB")
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=ffffff "Markdown")
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000 "JavaScript")
 ![Passport](https://img.shields.io/badge/Passport-000000?style=flat-square&logo=passport&logoColor=34E27A "Passport")
 ![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=ffffff "Mocha")
 ![Chai](https://img.shields.io/badge/Chai-A30701?style=flat-square&logo=chai&logoColor=ffffff "Chai")
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=flat-square&logo=heroku&logoColor=ffffff "Heroku")
-<!--
-![]( "")
--->
-
 
 ### How you can use this project?
 

@@ -3,7 +3,7 @@
     <g shape-rendering="crispEdges">
         <rect x="0" width="132" height="32" fill="#216290" />
     </g>
-    <g fill="#fff" text-anchor="middle" font-family="Segoe UI,Verdana,Geneva,sans-serif" text-rendering="geometricPrecision" font-size="20" letter-spacing="2">
+    <g fill="#fff" text-anchor="middle" font-family="Segoe UI,Verdana,Geneva,sans-serif" text-rendering="geometricPrecision" font-size="20" letter-spacing="1">
         <text x="66" y="23" textLength="100" lengthAdjust="spacingAndGlyphs">ImCoding</text>
     </g>
 </svg>

@@ -1,8 +1,5 @@
 # <img src="client/public/images/imcoding_logo4.png" width="30" height="30" alt="ImCoding" title="ImCoding" /> ImCoding
 
-![ImCoding](https://img.shields.io/badge/ImCoding-228b22.svg?style=flat-square "ImCoding")
-![by: Mike Gullo](https://img.shields.io/badge/by:-Mike%20Gullo-232323.svg?style=flat-square&labelColor=dc143c "by: Mike Gullo")
-
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB "React")
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=ffffff "MongoDB")
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=ffffff "Markdown")
@@ -22,15 +19,16 @@
 
 ---
 
+### About this project
+
+
+
+---
+
 ### How you can use this project?
 
 -   Clone the GitHub repo.
 -   Install the necessary npm packages.
-
-```bash
-npm i
-```
-
 -   Include these environmental variables in your .env file:
 
 ```txt
@@ -49,17 +47,20 @@ REACT_APP_EMAIL=your@email.com
 -   Start the app.
 
 ```bash
+npm run dev
+
+# to run just the Express server
 npm run start
 ```
 
 ---
 
-![GitHub last commit](https://img.shields.io/github/last-commit/mike14747/imcoding?style=for-the-badge)
+![ImCoding](project_name.svg "ImCoding")
+![by Mike Gullo](author.svg "by Mike Gullo")
 
-### This project was created and is maintained by:
-
--   Mike Gullo
 -   Live version: [imcoding.herokuapp.com](https://imcoding.herokuapp.com/)
 -   This project's github repo: https://github.com/mike14747/imcoding
 -   Me on github: https://github.com/mike14747
 -   Contact me at: mgullo.dev@gmail.com
+
+![GitHub last commit](https://img.shields.io/github/last-commit/mike14747/imcoding?style=for-the-badge)
